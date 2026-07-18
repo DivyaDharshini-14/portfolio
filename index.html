@@ -1,1123 +1,1558 @@
-<!doctype html>
-<html lang="en">
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
   <head>
-    <title>Divyadharshini N | Full Stack Laravel Developer</title>
     <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Divyadharshini N | Full Stack Laravel Developer</title>
     <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+      name="description"
+      content="Full Stack Laravel Developer in Bangalore — PHP, Laravel, MySQL, REST APIs."
     />
-
+    <meta name="author" content="Divyadharshini N" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900"
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap"
       rel="stylesheet"
     />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              /* Surfaces */
+              ink: "#0a0e17",
+              soft: "#3d4659",
+              mute: "#6b7385",
+              "on-dark": "#cbd5e1",
+              light: "#f7f8fa",
+              dark: "#111827",
+              "dark-2": "#0b1220",
+              panel: "#ffffff",
+              line: "#e2e5ec",
+              "line-dark": "#1f2a3d",
+              mark: "#0891b2",
+              "mark-dark": "#0e7490",
+              navy: "#1e3a5f",
+              teal: "#0f766e",
+              slate: "#334155",
+              wine: "#9f1239",
+            },
+            fontFamily: {
+              display: ["Space Grotesk", "system-ui", "sans-serif"],
+              sans: ["Manrope", "system-ui", "sans-serif"],
+            },
+            fontSize: {
+              display: ["clamp(2.75rem, 7.5vw, 4.75rem)", { lineHeight: "1.02", letterSpacing: "-0.04em", fontWeight: "600" }],
+              h2: ["clamp(1.85rem, 3.5vw, 2.5rem)", { lineHeight: "1.15", letterSpacing: "-0.03em", fontWeight: "600" }],
+              h3: ["clamp(1.35rem, 2.2vw, 1.75rem)", { lineHeight: "1.25", letterSpacing: "-0.025em", fontWeight: "600" }],
+              lead: ["1.125rem", { lineHeight: "1.7", fontWeight: "400" }],
+              body: ["1.0625rem", { lineHeight: "1.7", fontWeight: "400" }],
+            },
+            maxWidth: { site: "72rem" },
+          },
+        },
+      };
+    </script>
+    <style>
+      [x-cloak] { display: none !important; }
 
-    <link rel="stylesheet" href="css/open-iconic-bootstrap.min.css" />
-    <link rel="stylesheet" href="css/animate.css" />
+      :root {
+        --bg: #0b1220;
+        --bg-2: #111827;
+        --card: #0f172a;
+        --card-2: #111827;
+        --line: #1f2a3d;
+        --text: #f8fafc;
+        --muted: #94a3b8;
+        --soft: #cbd5e1;
+        --cyan: #22d3ee;
+        --cyan-dim: #0891b2;
+        --cyan-soft: rgba(34, 211, 238, 0.15);
+      }
 
-    <link rel="stylesheet" href="css/owl.carousel.min.css" />
-    <link rel="stylesheet" href="css/owl.theme.default.min.css" />
-    <link rel="stylesheet" href="css/magnific-popup.css" />
+      .page-bg {
+        position: fixed;
+        inset: 0;
+        z-index: -1;
+        pointer-events: none;
+        background:
+          radial-gradient(ellipse 55% 40% at 85% 5%, rgba(8, 145, 178, 0.22), transparent 58%),
+          radial-gradient(ellipse 40% 35% at 10% 70%, rgba(15, 118, 110, 0.1), transparent 55%),
+          var(--bg);
+      }
+      .page-bg__grain {
+        position: absolute;
+        inset: 0;
+        opacity: 0.12;
+        mix-blend-mode: soft-light;
+        background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+      }
 
-    <link rel="stylesheet" href="css/aos.css" />
+      .site-header {
+        background: rgba(11, 18, 32, 0.85);
+        border-color: rgba(31, 42, 61, 0.9);
+        transition: box-shadow 0.25s ease, background-color 0.25s ease;
+      }
+      .site-header.is-scrolled {
+        background: rgba(11, 18, 32, 0.94);
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+      }
 
-    <link rel="stylesheet" href="css/ionicons.min.css" />
+      .nav-link {
+        position: relative;
+        color: #94a3b8;
+        transition: color 0.2s ease;
+      }
+      .nav-link::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: -0.35rem;
+        width: 100%;
+        height: 2px;
+        background: var(--cyan);
+        transform: scaleX(0);
+        transform-origin: left;
+        transition: transform 0.22s ease;
+      }
+      .nav-link:hover,
+      .nav-link.is-active {
+        color: var(--cyan);
+      }
+      .nav-link.is-active::after,
+      .nav-link:hover::after {
+        transform: scaleX(1);
+      }
 
-    <link rel="stylesheet" href="css/flaticon.css" />
-    <link rel="stylesheet" href="css/icomoon.css" />
-    <link rel="stylesheet" href="css/style.css" />
-    <link rel="stylesheet" href="css/fix-overflow.css" />
+      .mark {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.55rem;
+        font-size: 0.8125rem;
+        font-weight: 700;
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+        color: var(--cyan);
+      }
+      .mark::before {
+        content: "";
+        display: block;
+        width: 1.5rem;
+        height: 3px;
+        background: var(--cyan);
+        flex-shrink: 0;
+      }
+      .mark-on-dark { color: var(--cyan); }
+      .mark-on-dark::before { background: var(--cyan); }
+
+      .heading { color: #f8fafc; font-family: "Space Grotesk", system-ui, sans-serif; }
+      .heading-on-dark { color: #f8fafc; }
+
+      /* Readable light text on dark surfaces */
+      body { color: #e2e8f0; }
+      .text-lead,
+      .work-row__desc,
+      .timeline-card__desc,
+      .timeline-card__co,
+      .copy-light {
+        color: #cbd5e1 !important;
+      }
+      .brand-logo {
+        color: #22d3ee;
+        transition: color 0.2s ease, opacity 0.2s ease;
+      }
+      .brand-logo:hover {
+        color: #67e8f9;
+      }
+
+      .chip,
+      .timeline-chip {
+        display: inline-flex;
+        align-items: center;
+        border-radius: 0.25rem;
+        border: 1px solid #475569;
+        background: rgba(15, 23, 42, 0.65);
+        padding: 0.2rem 0.5rem;
+        font-size: 0.68rem;
+        font-weight: 600;
+        color: #e2e8f0;
+      }
+
+      .social-icon {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 2.35rem;
+        height: 2.35rem;
+        border: none;
+        border-radius: 0.5rem;
+        background: transparent;
+        transition: transform 0.2s ease, filter 0.2s ease, opacity 0.2s ease;
+      }
+      .social-icon:hover {
+        transform: translateY(-1px);
+        opacity: 0.85;
+      }
+      .social-icon img {
+        width: 1.25rem;
+        height: 1.25rem;
+        display: block;
+        /* black SVG → site cyan #22d3ee */
+        filter: invert(78%) sepia(42%) saturate(748%) hue-rotate(131deg) brightness(98%) contrast(101%);
+      }
+      @media (min-width: 640px) {
+        .social-icon { width: 2.5rem; height: 2.5rem; }
+        .social-icon img { width: 1.35rem; height: 1.35rem; }
+      }
+
+      .tech-logos {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 0.65rem;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+      }
+      .tech-logos li {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 2.75rem;
+        width: 2.75rem;
+        padding: 0.4rem;
+        border-radius: 0.5rem;
+        border: 1px solid rgba(34, 211, 238, 0.55);
+        background: #ffffff;
+        transition: transform 0.22s ease, border-color 0.22s ease, box-shadow 0.22s ease;
+      }
+      .tech-logos li:hover {
+        transform: translateY(-3px);
+        border-color: #22d3ee;
+        box-shadow: 0 8px 18px rgba(34, 211, 238, 0.2);
+      }
+      .tech-logos img {
+        display: block;
+        max-height: 100%;
+        max-width: 100%;
+        width: auto;
+        height: auto;
+        object-fit: contain;
+      }
+      @media (min-width: 640px) {
+        .tech-logos { gap: 0.75rem; }
+        .tech-logos li { height: 3.15rem; width: 3.15rem; padding: 0.45rem; }
+      }
+
+      .btn-primary {
+        background: linear-gradient(135deg, #0891b2 0%, #0f766e 100%);
+        color: #fff;
+        box-shadow: 0 6px 20px rgba(8, 145, 178, 0.35);
+        transition: filter 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+      }
+      .btn-primary:hover {
+        filter: brightness(1.08);
+        transform: translateY(-1px);
+        box-shadow: 0 10px 26px rgba(8, 145, 178, 0.42);
+      }
+      .btn-ghost {
+        display: inline-flex;
+        align-items: center;
+        border-radius: 0.375rem;
+        border: 1px solid #334155;
+        background: rgba(15, 23, 42, 0.7);
+        padding: 0.75rem 1.25rem;
+        font-size: 0.875rem;
+        font-weight: 600;
+        color: #e2e8f0;
+        transition: border-color 0.2s ease, color 0.2s ease, transform 0.2s ease;
+      }
+      .btn-ghost:hover {
+        border-color: rgba(34, 211, 238, 0.45);
+        color: var(--cyan);
+        transform: translateY(-1px);
+      }
+
+      .avail-pill {
+        display: inline-flex;
+        align-items: center;
+        align-self: flex-start;
+        width: max-content;
+        max-width: 100%;
+        gap: 0.5rem;
+        border-radius: 999px;
+        border: 1px solid rgba(34, 211, 238, 0.28);
+        background: rgba(34, 211, 238, 0.1);
+        padding: 0.35rem 0.85rem;
+        font-size: 0.75rem;
+        font-weight: 600;
+        color: #67e8f9;
+      }
+      .avail-pill::before {
+        content: "";
+        width: 0.45rem;
+        height: 0.45rem;
+        border-radius: 999px;
+        background: #22d3ee;
+        box-shadow: 0 0 0 3px rgba(34, 211, 238, 0.22);
+        animation: pulse-dot 1.8s ease-in-out infinite;
+      }
+      @keyframes pulse-dot {
+        0%, 100% { opacity: 1; transform: scale(1); }
+        50% { opacity: 0.65; transform: scale(0.85); }
+      }
+
+      /* Hero — cinematic dark */
+      .hero-bg {
+        position: absolute;
+        inset: 0;
+        z-index: 0;
+        overflow: hidden;
+        pointer-events: none;
+      }
+      .hero-bg img {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center right;
+        opacity: 0.18;
+        filter: grayscale(0.2) contrast(1.1) saturate(0.85);
+        transform: scale(1.04);
+      }
+      .hero-bg::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background:
+          linear-gradient(90deg, #0b1220 0%, rgba(11, 18, 32, 0.92) 40%, rgba(11, 18, 32, 0.55) 70%, rgba(11, 18, 32, 0.35) 100%),
+          linear-gradient(180deg, rgba(11, 18, 32, 0.2) 0%, transparent 40%, rgba(11, 18, 32, 0.7) 100%);
+      }
+      #top > .mx-auto { position: relative; z-index: 1; }
+      .hero-glow {
+        position: absolute;
+        inset: 8% 5% 0;
+        border-radius: 50%;
+        background: radial-gradient(circle, rgba(34, 211, 238, 0.28), transparent 68%);
+        filter: blur(10px);
+        pointer-events: none;
+        z-index: 0;
+      }
+      .hero-frame {
+        position: relative;
+        z-index: 1;
+        display: inline-flex;
+        max-width: 100%;
+        padding: 0;
+        overflow: visible;
+        border: none;
+        border-radius: 0;
+        background: transparent;
+        box-shadow: none;
+      }
+      .hero-silhouette {
+        display: block;
+        width: 100%;
+        height: auto;
+        max-height: min(64vh, 520px);
+        object-fit: contain;
+        object-position: bottom center;
+        /* Soft cyan edge glow that follows transparent PNG alpha */
+        filter:
+          drop-shadow(0 0 6px rgba(34, 211, 238, 0.95))
+          drop-shadow(0 0 18px rgba(34, 211, 238, 0.55))
+          drop-shadow(0 8px 24px rgba(8, 145, 178, 0.35))
+          brightness(1.25)
+          contrast(1.12);
+      }
+      @media (min-width: 640px) { .hero-silhouette { max-height: min(70vh, 600px); } }
+      @media (min-width: 1024px) { .hero-silhouette { max-height: min(76vh, 680px); } }
+
+      /* Shared dark card */
+      .surface-card {
+        border-radius: 0.9rem;
+        border: 1px solid var(--line);
+        background:
+          radial-gradient(ellipse 70% 50% at 0% 0%, rgba(8, 145, 178, 0.12), transparent 55%),
+          var(--card);
+        box-shadow: 0 12px 28px rgba(0, 0, 0, 0.25);
+        transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+      }
+      .surface-card:hover {
+        transform: translateY(-2px);
+        border-color: rgba(34, 211, 238, 0.35);
+        box-shadow: 0 18px 36px rgba(0, 0, 0, 0.35);
+      }
+
+      /* Work — card grid with CSS placeholder as background */
+      .work-grid {
+        display: grid;
+        gap: 1rem;
+        grid-template-columns: 1fr;
+      }
+      @media (min-width: 768px) {
+        .work-grid {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+          gap: 1.1rem;
+        }
+        .work-row--featured {
+          grid-column: 1 / -1;
+        }
+      }
+      .work-row {
+        position: relative;
+        overflow: hidden;
+        display: block;
+        padding: 1.2rem 1.2rem 1.35rem;
+        min-height: 11.5rem;
+      }
+      .work-row__body {
+        position: relative;
+        z-index: 2;
+        max-width: 34rem;
+      }
+      .work-row__meta {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 0.45rem 0.65rem;
+        margin-bottom: 0.45rem;
+      }
+      .work-index {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        min-width: 1.55rem;
+        height: 1.3rem;
+        padding: 0 0.35rem;
+        border-radius: 999px;
+        background: rgba(34, 211, 238, 0.15);
+        color: #67e8f9;
+        font-size: 0.65rem;
+        font-weight: 700;
+      }
+      .work-tag {
+        font-size: 0.68rem;
+        font-weight: 700;
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+        color: var(--cyan);
+      }
+      .work-row h3 {
+        font-family: "Space Grotesk", system-ui, sans-serif;
+        font-size: clamp(1.15rem, 2vw, 1.35rem);
+        font-weight: 600;
+        letter-spacing: -0.02em;
+        color: var(--text);
+        line-height: 1.2;
+      }
+      .work-row__desc {
+        margin-top: 0.35rem;
+        font-size: 0.9rem;
+        line-height: 1.55;
+        color: var(--soft);
+      }
+      .work-row__chips {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.3rem;
+        margin-top: 0.65rem;
+      }
+      .work-ph {
+        position: absolute;
+        inset: 0;
+        z-index: 0;
+        overflow: hidden;
+        pointer-events: none;
+        opacity: 0.55;
+      }
+      .work-ph::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background-image:
+          linear-gradient(rgba(148, 163, 184, 0.07) 1px, transparent 1px),
+          linear-gradient(90deg, rgba(148, 163, 184, 0.07) 1px, transparent 1px);
+        background-size: 18px 18px;
+        opacity: 0.7;
+      }
+      .work-ph::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background:
+          linear-gradient(105deg, rgba(15, 23, 42, 0.92) 0%, rgba(15, 23, 42, 0.78) 42%, rgba(15, 23, 42, 0.35) 100%),
+          radial-gradient(ellipse 50% 60% at 90% 20%, rgba(34, 211, 238, 0.12), transparent 60%);
+      }
+      .work-ph__ui {
+        position: absolute;
+        right: 1rem;
+        bottom: 1rem;
+        left: auto;
+        z-index: 1;
+        display: grid;
+        gap: 0.4rem;
+        width: min(46%, 220px);
+        opacity: 0.85;
+      }
+      .work-ph__bar {
+        height: 0.4rem;
+        border-radius: 999px;
+        background: rgba(34, 211, 238, 0.32);
+      }
+      .work-ph__bar--sm { width: 42%; background: rgba(148, 163, 184, 0.28); }
+      .work-ph__bar--md { width: 68%; }
+      .work-ph__bar--lg { width: 88%; }
+      .work-ph__blocks {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 0.35rem;
+        margin-top: 0.2rem;
+      }
+      .work-ph__block {
+        height: 2rem;
+        border-radius: 0.3rem;
+        border: 1px solid rgba(51, 65, 85, 0.9);
+        background: rgba(15, 23, 42, 0.65);
+      }
+      .work-ph__block:nth-child(2) {
+        border-color: rgba(34, 211, 238, 0.35);
+        background: rgba(8, 145, 178, 0.18);
+      }
+      .work-row:hover .work-ph {
+        opacity: 0.7;
+        transition: opacity 0.3s ease;
+      }
+      .project-link {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.35rem;
+        margin-top: 0.55rem;
+        font-size: 0.8125rem;
+        font-weight: 600;
+        color: var(--cyan);
+        transition: color 0.2s ease, gap 0.2s ease;
+      }
+      .project-link:hover { color: #67e8f9; gap: 0.55rem; }
+
+      /* Experience timeline */
+      .timeline {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        max-width: 40rem;
+      }
+      @media (min-width: 640px) {
+        .timeline { padding-left: 1.25rem; }
+        .timeline::before {
+          content: "";
+          position: absolute;
+          left: 0.35rem;
+          top: 0.5rem;
+          bottom: 0.5rem;
+          width: 2px;
+          background: linear-gradient(180deg, #22d3ee 0%, rgba(34, 211, 238, 0.12) 100%);
+          border-radius: 999px;
+        }
+      }
+      .timeline-card {
+        position: relative;
+        border-radius: 0.9rem;
+        border: 1px solid var(--line);
+        background:
+          radial-gradient(ellipse 70% 50% at 0% 0%, rgba(8, 145, 178, 0.12), transparent 55%),
+          var(--card);
+        padding: 1.15rem 1.2rem 1.25rem;
+        box-shadow: 0 12px 28px rgba(0, 0, 0, 0.25);
+        transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+      }
+      .timeline-card:hover {
+        transform: translateY(-2px);
+        border-color: rgba(34, 211, 238, 0.35);
+        box-shadow: 0 18px 36px rgba(0, 0, 0, 0.35);
+      }
+      .timeline-card--now {
+        border-color: rgba(34, 211, 238, 0.4);
+        background:
+          radial-gradient(ellipse 80% 60% at 0% 0%, rgba(8, 145, 178, 0.22), transparent 55%),
+          var(--card-2);
+      }
+      .timeline-card__dot { display: none; }
+      @media (min-width: 640px) {
+        .timeline-card__dot {
+          display: block;
+          position: absolute;
+          left: -1.25rem;
+          top: 1.45rem;
+          width: 0.75rem;
+          height: 0.75rem;
+          border-radius: 999px;
+          background: #22d3ee;
+          box-shadow: 0 0 0 4px rgba(34, 211, 238, 0.18);
+          z-index: 2;
+        }
+      }
+      .timeline-card__top {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 0.5rem;
+        margin-bottom: 0.75rem;
+      }
+      .timeline-badge {
+        display: inline-flex;
+        align-items: center;
+        border-radius: 999px;
+        padding: 0.2rem 0.55rem;
+        font-size: 0.65rem;
+        font-weight: 700;
+        letter-spacing: 0.04em;
+        text-transform: uppercase;
+      }
+      .timeline-badge--now { background: rgba(34, 211, 238, 0.15); color: #67e8f9; }
+      .timeline-badge--past { background: rgba(148, 163, 184, 0.12); color: #94a3b8; }
+      .timeline-date { font-size: 0.75rem; font-weight: 600; color: var(--cyan); }
+      .timeline-card h3 {
+        font-family: "Space Grotesk", system-ui, sans-serif;
+        font-size: 1.2rem;
+        font-weight: 600;
+        letter-spacing: -0.02em;
+        color: var(--text);
+        line-height: 1.25;
+      }
+      .timeline-card__co { margin-top: 0.3rem; font-size: 0.8125rem; font-weight: 500; color: var(--muted); }
+      .timeline-card__desc { margin-top: 0.7rem; font-size: 0.9rem; line-height: 1.6; color: var(--soft); }
+      .timeline-card__skills { display: flex; flex-wrap: wrap; gap: 0.35rem; margin-top: 0.85rem; }
+      .exp-summary { display: flex; flex-wrap: wrap; gap: 0.65rem 1.25rem; margin-top: 0.85rem; }
+      .exp-summary span { font-size: 0.8125rem; color: var(--muted); }
+      .exp-summary strong { color: #67e8f9; font-weight: 600; }
+
+      /* Skills — dark groups, white icon tiles like hero */
+      .stack-panel {
+        position: relative;
+        border-radius: 0.9rem;
+        border: 1px solid var(--line);
+        background:
+          radial-gradient(ellipse 70% 50% at 0% 0%, rgba(8, 145, 178, 0.1), transparent 55%),
+          var(--card);
+        padding: 1.35rem 1.15rem 1.35rem;
+        box-shadow: 0 12px 28px rgba(0, 0, 0, 0.22);
+        transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+      }
+      .stack-panel::before {
+        content: "";
+        position: absolute;
+        left: 1.15rem;
+        right: 1.15rem;
+        top: 0;
+        height: 3px;
+        border-radius: 0 0 2px 2px;
+        background: #22d3ee;
+      }
+      .stack-panel:hover {
+        transform: translateY(-2px);
+        border-color: rgba(34, 211, 238, 0.35);
+        box-shadow: 0 18px 36px rgba(0, 0, 0, 0.32);
+      }
+      .stack-panel h3 {
+        color: #67e8f9 !important;
+      }
+      .stack-icons {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1rem 1.1rem;
+        margin: 1.1rem 0 0;
+        padding: 0;
+        list-style: none;
+      }
+      .stack-icons li {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 0.45rem;
+        width: 3.75rem;
+        transition: transform 0.2s ease;
+      }
+      .stack-icons li:hover { transform: translateY(-2px); }
+      .stack-icons img {
+        display: block;
+        width: 2.5rem;
+        height: 2.5rem;
+        padding: 0.35rem;
+        object-fit: contain;
+        border-radius: 0.5rem;
+        border: 1px solid rgba(34, 211, 238, 0.55);
+        background: #ffffff;
+        box-sizing: content-box;
+      }
+      .stack-icons span {
+        font-size: 0.68rem;
+        font-weight: 600;
+        color: #cbd5e1;
+        text-align: center;
+        line-height: 1.2;
+      }
+      @media (min-width: 640px) {
+        .stack-icons li { width: 4.25rem; }
+        .stack-icons img {
+          width: 2.75rem;
+          height: 2.75rem;
+        }
+      }
+
+      /* About — education cards */
+      #about .heading,
+      #about h2,
+      #about h3 {
+        color: #f8fafc !important;
+      }
+      #about .text-lead {
+        color: #cbd5e1 !important;
+      }
+      .edu-card {
+        border-radius: 0.9rem;
+        border: 1px solid var(--line);
+        background:
+          radial-gradient(ellipse 70% 50% at 0% 0%, rgba(8, 145, 178, 0.1), transparent 55%),
+          var(--card);
+        padding: 1.1rem 1.15rem;
+        transition: transform 0.25s ease, border-color 0.25s ease;
+      }
+      .edu-card:hover {
+        transform: translateY(-2px);
+        border-color: rgba(34, 211, 238, 0.3);
+      }
+      .edu-card__label {
+        font-size: 0.68rem;
+        font-weight: 700;
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+        color: #22d3ee;
+      }
+      .edu-card p:not(.edu-card__label) {
+        color: #94a3b8;
+      }
+
+      /* Contact */
+      .contact-panel {
+        overflow: hidden;
+        border-radius: 1rem;
+        border: 1px solid var(--line);
+        background:
+          radial-gradient(ellipse 60% 80% at 0% 0%, rgba(8, 145, 178, 0.14), transparent 55%),
+          var(--card);
+        box-shadow: 0 16px 40px rgba(0, 0, 0, 0.3);
+      }
+      .contact-panel__media {
+        position: relative;
+        min-height: 220px;
+        background: #020617;
+      }
+      .contact-panel__media img {
+        display: block;
+        width: 100%;
+        height: 100%;
+        min-height: 220px;
+        object-fit: cover;
+        object-position: center;
+        opacity: 0.75;
+      }
+      .contact-panel__media::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(90deg, rgba(15, 23, 42, 0.55), transparent 50%);
+      }
+      @media (min-width: 768px) {
+        .contact-panel__media { min-height: 100%; }
+        .contact-panel__media img {
+          position: absolute;
+          inset: 0;
+          min-height: 0;
+        }
+      }
+
+      .section-band {
+        border-color: var(--line);
+        background: var(--bg-2);
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        .avail-pill::before { animation: none; }
+        .tech-logos li,
+        .work-ph,
+        .work-row,
+        .timeline-card,
+        .stack-panel,
+        .stack-icons li,
+        .edu-card,
+        .btn-primary,
+        .btn-ghost,
+        .surface-card {
+          transition: none;
+        }
+      }
+    </style>
+
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.14.8/dist/cdn.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
   </head>
-  <body data-spy="scroll" data-target=".site-navbar-target" data-offset="300">
-    <nav
-      class="navbar navbar-expand-lg navbar-dark ftco_navbar ftco-navbar-light site-navbar-target"
-      id="ftco-navbar"
+  <body class="bg-dark-2 font-sans text-slate-100 antialiased" x-data="{ open: false }">
+    <div class="page-bg" aria-hidden="true">
+      <div class="page-bg__grain"></div>
+    </div>
+
+    <a
+      href="#main"
+      class="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-[100] focus:rounded-md focus:bg-cyan-400 focus:px-4 focus:py-2 focus:text-ink"
+      >Skip to content</a
     >
-      <div class="container">
-        <a class="navbar-brand" href="index.html">Divya</a>
-        <button
-          class="navbar-toggler js-fh5co-nav-toggle fh5co-nav-toggle"
-          type="button"
-          data-toggle="collapse"
-          data-target="#ftco-nav"
-          aria-controls="ftco-nav"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
+
+    <header id="site-header" class="site-header sticky top-0 z-50 border-b backdrop-blur-md">
+      <div class="mx-auto flex h-16 max-w-site items-center justify-between gap-4 px-5 sm:px-8">
+        <a href="#top" class="brand-logo font-display text-[1.05rem] font-semibold tracking-tight"
+          >Divyadharshini N</a
         >
-          <span class="oi oi-menu"></span> Menu
-        </button>
 
-        <div class="collapse navbar-collapse" id="ftco-nav">
-          <ul class="navbar-nav nav ml-auto">
-            <li class="nav-item">
-              <a href="#home-section" class="nav-link"><span>Home</span></a>
-            </li>
-            <li class="nav-item">
-              <a href="#about-section" class="nav-link"><span>About</span></a>
-            </li>
-            <li class="nav-item">
-              <a href="#resume-section" class="nav-link"><span>Resume</span></a>
-            </li>
-            <li class="nav-item">
-              <a href="#services-section" class="nav-link"
-                ><span>Services</span></a
-              >
-            </li>
-            <li class="nav-item">
-              <a href="#skills-section" class="nav-link"><span>Skills</span></a>
-            </li>
-            <li class="nav-item">
-              <a href="#projects-section" class="nav-link"
-                ><span>Projects</span></a
-              >
-            </li>
-            <li class="nav-item">
-              <a href="#blog-section" class="nav-link"
-                ><span>Highlights</span></a
-              >
-            </li>
-            <li class="nav-item">
-              <a href="#contact-section" class="nav-link"
-                ><span>Contact</span></a
-              >
-            </li>
-          </ul>
-        </div>
-      </div>
-    </nav>
-    <section id="home-section" class="hero">
-      <div class="home-slider owl-carousel">
-        <div class="slider-item">
-          <div class="overlay"></div>
-          <div class="container">
-            <div
-              class="row d-md-flex no-gutters slider-text align-items-end justify-content-end"
-              data-scrollax-parent="true"
+        <nav class="hidden items-center gap-7 md:flex" aria-label="Primary">
+          <a href="#work" class="nav-link text-sm font-medium" data-nav>Work</a>
+          <a href="#experience" class="nav-link text-sm font-medium" data-nav>Experience</a>
+          <a href="#skills" class="nav-link text-sm font-medium" data-nav>Skills</a>
+          <a href="#contact" class="nav-link text-sm font-medium" data-nav>Contact</a>
+        </nav>
+
+        <div class="flex items-center gap-1.5 sm:gap-2">
+          <div class="flex items-center gap-1.5" aria-label="Contact links">
+            <a
+              href="Divyadharshini_N.pdf"
+              target="_blank"
+              rel="noopener"
+              class="social-icon"
+              aria-label="Download CV"
             >
-              <div
-                class="one-third js-fullheight order-md-last img"
-                style="background-image: url(images/bg_1.png)"
-              >
-                <div class="overlay"></div>
-              </div>
-              <div
-                class="one-forth d-flex align-items-center ftco-animate"
-                data-scrollax=" properties: { translateY: '70%' }"
-              >
-                <div class="text">
-                  <span class="subheading">Hello!</span>
-                  <h1 class="mb-4 mt-3">I'm <span>Divyadharshini N</span></h1>
-                  <h2 class="mb-4">Full Stack Laravel Developer</h2>
-                  <p>
-                    <a href="#contact-section" class="btn btn-primary py-3 px-4"
-                      >Contact Me</a
-                    >
-                    <a
-                      href="#projects-section"
-                      class="btn btn-white btn-outline-white py-3 px-4"
-                      >View Projects</a
-                    >
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="slider-item">
-          <div class="overlay"></div>
-          <div class="container">
-            <div
-              class="row d-flex no-gutters slider-text align-items-end justify-content-end"
-              data-scrollax-parent="true"
+              <img src="assets/icons/resume-4-svgrepo-com.svg" alt="" width="20" height="20" />
+            </a>
+            <a href="mailto:divyadharshinin2922@gmail.com" class="social-icon" aria-label="Email">
+              <img src="assets/icons/email.svg" alt="" width="20" height="20" />
+            </a>
+            <a href="tel:+917530077506" class="social-icon" aria-label="Phone">
+              <img src="assets/icons/phone.svg" alt="" width="20" height="20" />
+            </a>
+            <a
+              href="https://github.com/DivyaDharshini-14"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="social-icon"
+              aria-label="GitHub"
             >
-              <div
-                class="one-third js-fullheight order-md-last img"
-                style="background-image: url(images/bg_2.png)"
-              >
-                <div class="overlay"></div>
-              </div>
-              <div
-                class="one-forth d-flex align-items-center ftco-animate"
-                data-scrollax=" properties: { translateY: '70%' }"
-              >
-                <div class="text">
-                  <span class="subheading">Building reliable products</span>
-                  <h1 class="mb-4 mt-3">
-                    I build <span>scalable Laravel applications</span> for web
-                    and mobile platforms
-                  </h1>
-                  <p>
-                    <a
-                      href="resume/Divyadharshini_N.pdf"
-                      class="btn btn-primary py-3 px-4"
-                      target="_blank"
-                      >Download CV</a
-                    >
-                    <a
-                      href="https://linkedin.com/in/divya-dharshini146"
-                      class="btn btn-white btn-outline-white py-3 px-4"
-                      target="_blank"
-                      >LinkedIn</a
-                    >
-                  </p>
-                </div>
-              </div>
-            </div>
+              <img src="assets/icons/github-142-svgrepo-com.svg" alt="" width="20" height="20" />
+            </a>
+            <a
+              href="https://linkedin.com/in/divya-dharshini146"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="social-icon"
+              aria-label="LinkedIn"
+            >
+              <img src="assets/icons/linkedin-rounded-svgrepo-com.svg" alt="" width="20" height="20" />
+            </a>
           </div>
+          <button
+            type="button"
+            class="inline-flex h-10 w-10 items-center justify-center rounded-md border border-slate-600 bg-slate-900 text-slate-200 md:hidden"
+            @click="open = !open"
+            :aria-expanded="open.toString()"
+            aria-label="Menu"
+          >
+            <svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path x-show="!open" stroke-linecap="round" stroke-width="1.75" d="M4 7h16M4 12h16M4 17h16" />
+              <path x-cloak x-show="open" stroke-linecap="round" stroke-width="1.75" d="M6 18L18 6M6 6l12 12" />
+            </svg>
+          </button>
         </div>
       </div>
-    </section>
 
-    <section class="ftco-about img ftco-section ftco-no-pb" id="about-section">
-      <div class="container">
-        <div class="row d-flex">
-          <div class="col-md-6 col-lg-5 d-flex">
-            <div class="img-about img d-flex align-items-stretch">
-              <div class="overlay"></div>
-              <div
-                class="img d-flex align-self-stretch align-items-center"
-                style="background-image: url(images/bg_1.png)"
-              ></div>
-            </div>
-          </div>
-          <div class="col-md-6 col-lg-7 pl-lg-5 pb-5">
-            <div class="row justify-content-start pb-3">
-              <div class="col-md-12 heading-section ftco-animate">
-                <h1 class="big">About</h1>
-                <h2 class="mb-4">About Me</h2>
-                <p>
-                  Full Stack Laravel Developer with over one year of
-                  professional experience building secure, scalable web
-                  applications and backend services using PHP, Laravel, MySQL,
-                  React.js, Inertia.js, and Tailwind CSS.
-                </p>
-                <ul class="about-info mt-4 px-md-0 px-2">
-                  <li class="d-flex">
-                    <span>Name:</span> <span>Divyadharshini N</span>
-                  </li>
-                  <li class="d-flex">
-                    <span>Role:</span> <span>Full Stack Laravel Developer</span>
-                  </li>
-                  <li class="d-flex">
-                    <span>Location:</span> <span>Bangalore, Karnataka</span>
-                  </li>
-                  <li class="d-flex">
-                    <span>Email:</span>
-                    <span>divyadharshinin2922@gmail.com</span>
-                  </li>
-                  <li class="d-flex">
-                    <span>Phone:</span> <span>+91-7530077506</span>
-                  </li>
-                  <li class="d-flex">
-                    <span>LinkedIn:</span>
-                    <span>linkedin.com/in/divya-dharshini146</span>
-                  </li>
-                </ul>
-              </div>
-            </div>
-            <div class="counter-wrap ftco-animate d-flex mt-md-3">
-              <div class="text">
-                <p class="mb-4">
-                  <span class="number" data-number="5">0</span>
-                  <span>Key projects showcased</span>
-                </p>
-                <p>
-                  <a
-                    href="resume/Divyadharshini_N.pdf"
-                    class="btn btn-primary py-3 px-3"
-                    target="_blank"
-                    >Download CV</a
-                  >
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
+      <div x-show="open" x-cloak x-transition class="border-t border-slate-700 bg-slate-900 md:hidden">
+        <nav class="mx-auto flex max-w-site flex-col px-5 py-3 text-slate-200" aria-label="Mobile">
+          <a href="#work" class="py-3 text-sm font-medium" @click="open = false">Work</a>
+          <a href="#experience" class="py-3 text-sm font-medium" @click="open = false">Experience</a>
+          <a href="#skills" class="py-3 text-sm font-medium" @click="open = false">Skills</a>
+          <a href="#contact" class="py-3 text-sm font-medium" @click="open = false">Contact</a>
+        </nav>
       </div>
-    </section>
+    </header>
 
-    <section class="ftco-section ftco-no-pb" id="resume-section">
-      <div class="container">
-        <div class="row justify-content-center pb-5">
-          <div class="col-md-10 heading-section text-center ftco-animate">
-            <h1 class="big big-2">Resume</h1>
-            <h2 class="mb-4">Resume</h2>
-            <p>
-              Experience in backend architecture, REST API development,
-              authentication systems, RBAC, database optimization, and
-              production-ready application delivery across multiple business
-              domains.
+    <main id="main">
+      <!-- Hero -->
+      <section id="top" class="relative overflow-hidden border-b border-slate-800">
+        <div class="hero-bg" aria-hidden="true">
+          <img
+            src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&amp;fit=crop&amp;w=1800&amp;q=60"
+            alt=""
+            width="1800"
+            height="1200"
+            loading="eager"
+            decoding="async"
+          />
+        </div>
+        <div class="mx-auto grid max-w-site items-stretch gap-8 lg:grid-cols-12 lg:gap-0">
+          <div class="flex flex-col justify-center px-5 py-16 sm:px-8 sm:py-20 lg:col-span-7 lg:py-24">
+            <p class="reveal avail-pill mb-5" data-anim>Open to roles · Bangalore / Remote</p>
+            <p class="reveal mark" data-anim>Full Stack Laravel Developer · Bangalore</p>
+            <h1 class="reveal heading mt-4 text-display" data-anim>Divyadharshini N</h1>
+            <p class="reveal mt-6 max-w-lg text-lead" data-anim>
+              Building secure Laravel apps, REST APIs, and admin systems for web and
+              mobile teams.
             </p>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-md-6">
-            <div class="resume-wrap ftco-animate">
-              <span class="date">2021 - 2023</span>
-              <h2>M.Sc. Computer Science</h2>
-              <span class="position"
-                >Chikkanna Government Arts College | Bharathiar University</span
+            <ul class="reveal tech-logos mt-6" data-anim aria-label="Tech stack">
+              <li>
+                <img
+                  src="https://ik.imagekit.io/codebyjerry/Techstack%20logos/php.png?updatedAt=1777103789754"
+                  alt="PHP"
+                  width="48"
+                  height="48"
+                  loading="eager"
+                  decoding="async"
+                />
+              </li>
+              <li>
+                <img
+                  src="https://ik.imagekit.io/codebyjerry/Techstack%20logos/Laravel.png?updatedAt=1777103789399"
+                  alt="Laravel"
+                  width="48"
+                  height="48"
+                  loading="eager"
+                  decoding="async"
+                />
+              </li>
+              <li>
+                <img
+                  src="https://ik.imagekit.io/codebyjerry/Techstack%20logos/tailwind%20css.png?updatedAt=1777103789565"
+                  alt="Tailwind CSS"
+                  width="48"
+                  height="48"
+                  loading="eager"
+                  decoding="async"
+                />
+              </li>
+              <li>
+                <img
+                  src="https://ik.imagekit.io/codebyjerry/Techstack%20logos/mysql.png?updatedAt=1777103789400"
+                  alt="MySQL"
+                  width="48"
+                  height="48"
+                  loading="eager"
+                  decoding="async"
+                />
+              </li>
+              <li>
+                <img
+                  src="https://ik.imagekit.io/codebyjerry/Techstack%20logos/node-js.png?updatedAt=1777103789668"
+                  alt="Node.js"
+                  width="48"
+                  height="48"
+                  loading="eager"
+                  decoding="async"
+                />
+              </li>
+            </ul>
+            <div class="reveal mt-8 flex flex-wrap items-center gap-3" data-anim>
+              <a href="#work" class="btn-primary inline-flex items-center gap-2 rounded-md px-5 py-3 text-sm font-semibold"
+                >View work <span aria-hidden="true">→</span></a
               >
-              <p class="mt-4">
-                Graduated with a strong academic foundation in software
-                development, databases, and computer science concepts.
-              </p>
-            </div>
-            <div class="resume-wrap ftco-animate">
-              <span class="date">2018 - 2021</span>
-              <h2>B.Sc. Information Technology</h2>
-              <span class="position"
-                >AVP College of Arts and Science | Bharathiar University</span
-              >
-              <p class="mt-4">
-                Built the fundamentals in programming, web technologies, and
-                information systems that support my current full stack work.
-              </p>
-            </div>
-            <div class="resume-wrap ftco-animate">
-              <span class="date">Core Strengths</span>
-              <h2>Backend, APIs, and Security</h2>
-              <span class="position">Laravel | PHP | MySQL</span>
-              <p class="mt-4">
-                Hands-on experience in RESTful APIs, OpenAPI documentation, API
-                versioning, authentication, authorization, and backend
-                performance tuning.
-              </p>
+              <a href="#contact" class="btn-ghost">Get in touch</a>
             </div>
           </div>
 
-          <div class="col-md-6">
-            <div class="resume-wrap ftco-animate">
-              <span class="date">Feb 2025 - Present</span>
-              <h2>Full Stack Developer</h2>
-              <span class="position">Appstronaut IT Solution | Bangalore</span>
-              <p class="mt-4">
-                Develop scalable Laravel applications, secure APIs, RBAC
-                systems, admin dashboards with React.js and Inertia.js, and
-                optimized relational database structures.
+          <div
+            class="reveal hero-visual relative flex items-end justify-center px-5 pb-0 pt-4 sm:px-8 lg:col-span-5 lg:min-h-full lg:px-6 lg:pt-10"
+            data-anim
+          >
+            <div class="hero-glow" aria-hidden="true"></div>
+            <div class="hero-frame">
+              <img
+                src="assets/profile-hero.png"
+                alt="Divyadharshini N"
+                class="hero-silhouette"
+                width="997"
+                height="1400"
+                decoding="async"
+                fetchpriority="high"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Work — project timeline -->
+      <section id="work" class="section-band border-b px-5 py-14 sm:px-8 sm:py-16">
+        <div class="mx-auto max-w-site">
+          <div class="mb-8 flex flex-wrap items-end justify-between gap-4">
+            <div class="max-w-xl">
+              <p class="reveal mark" data-anim>Work</p>
+              <h2 class="reveal heading mt-2 text-h2" data-anim>Selected projects</h2>
+              <p class="reveal mt-2 text-sm text-slate-400" data-anim>
+                Live and internal Laravel product builds.
               </p>
             </div>
-            <div class="resume-wrap ftco-animate">
-              <span class="date">Dec 2024 - Feb 2025</span>
-              <h2>Laravel Developer</h2>
-              <span class="position">Aaran Infotech | Tiruppur</span>
-              <p class="mt-4">
-                Built backend modules, CRUD systems, MySQL schemas, and
-                validated API endpoints with middleware and secure
-                authentication practices.
-              </p>
-            </div>
-            <div class="resume-wrap ftco-animate">
-              <span class="date">Focus Areas</span>
-              <h2>Scalable Product Delivery</h2>
-              <span class="position">Web and Mobile Backend Systems</span>
-              <p class="mt-4">
-                Delivered production-ready systems across accounting,
-                healthcare, e-commerce, e-learning, and multi-tenant business
-                platforms.
-              </p>
-            </div>
-          </div>
-        </div>
-        <div class="row justify-content-center mt-5">
-          <div class="col-md-6 text-center ftco-animate">
-            <p>
-              <a
-                href="resume/Divyadharshini_N.pdf"
-                class="btn btn-primary py-4 px-5"
-                target="_blank"
-                >Download CV</a
-              >
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="ftco-section" id="services-section">
-      <div class="container">
-        <div class="row justify-content-center py-5 mt-5">
-          <div class="col-md-12 heading-section text-center ftco-animate">
-            <h1 class="big big-2">Services</h1>
-            <h2 class="mb-4">Services</h2>
-            <p>
-              Practical services I deliver across backend engineering, full
-              stack development, and application architecture.
-            </p>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-md-4 text-center d-flex ftco-animate">
-            <a href="#" class="services-1">
-              <span class="icon">
-                <i class="flaticon-analysis"></i>
-              </span>
-              <div class="desc">
-                <h3 class="mb-5">Laravel Development</h3>
-              </div>
-            </a>
-          </div>
-          <div class="col-md-4 text-center d-flex ftco-animate">
-            <a href="#" class="services-1">
-              <span class="icon">
-                <i class="flaticon-flasks"></i>
-              </span>
-              <div class="desc">
-                <h3 class="mb-5">REST API Development</h3>
-              </div>
-            </a>
-          </div>
-          <div class="col-md-4 text-center d-flex ftco-animate">
-            <a href="#" class="services-1">
-              <span class="icon">
-                <i class="flaticon-ideas"></i>
-              </span>
-              <div class="desc">
-                <h3 class="mb-5">Admin Dashboard Development</h3>
-              </div>
-            </a>
-          </div>
-
-          <div class="col-md-4 text-center d-flex ftco-animate">
-            <a href="#" class="services-1">
-              <span class="icon">
-                <i class="flaticon-analysis"></i>
-              </span>
-              <div class="desc">
-                <h3 class="mb-5">Authentication and RBAC</h3>
-              </div>
-            </a>
-          </div>
-          <div class="col-md-4 text-center d-flex ftco-animate">
-            <a href="#" class="services-1">
-              <span class="icon">
-                <i class="flaticon-flasks"></i>
-              </span>
-              <div class="desc">
-                <h3 class="mb-5">Database Design</h3>
-              </div>
-            </a>
-          </div>
-          <div class="col-md-4 text-center d-flex ftco-animate">
-            <a href="#" class="services-1">
-              <span class="icon">
-                <i class="flaticon-ideas"></i>
-              </span>
-              <div class="desc">
-                <h3 class="mb-5">Performance Optimization</h3>
-              </div>
-            </a>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="ftco-section" id="skills-section">
-      <div class="container">
-        <div class="row justify-content-center pb-5">
-          <div class="col-md-12 heading-section text-center ftco-animate">
-            <h1 class="big big-2">Skills</h1>
-            <h2 class="mb-4">My Skills</h2>
-            <p>
-              Core technologies used in my day-to-day work across backend,
-              frontend, and infrastructure-focused development.
-            </p>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-md-6 animate-box">
-            <div class="progress-wrap ftco-animate">
-              <h3>Laravel</h3>
-              <div class="progress">
-                <div
-                  class="progress-bar color-1"
-                  role="progressbar"
-                  aria-valuenow="95"
-                  aria-valuemin="0"
-                  aria-valuemax="100"
-                  style="width: 95%"
-                >
-                  <span>95%</span>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-6 animate-box">
-            <div class="progress-wrap ftco-animate">
-              <h3>PHP</h3>
-              <div class="progress">
-                <div
-                  class="progress-bar color-2"
-                  role="progressbar"
-                  aria-valuenow="93"
-                  aria-valuemin="0"
-                  aria-valuemax="100"
-                  style="width: 93%"
-                >
-                  <span>93%</span>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-6 animate-box">
-            <div class="progress-wrap ftco-animate">
-              <h3>HTML5</h3>
-              <div class="progress">
-                <div
-                  class="progress-bar color-3"
-                  role="progressbar"
-                  aria-valuenow="95"
-                  aria-valuemin="0"
-                  aria-valuemax="100"
-                  style="width: 95%"
-                >
-                  <span>95%</span>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-6 animate-box">
-            <div class="progress-wrap ftco-animate">
-              <h3>MySQL</h3>
-              <div class="progress">
-                <div
-                  class="progress-bar color-4"
-                  role="progressbar"
-                  aria-valuenow="92"
-                  aria-valuemin="0"
-                  aria-valuemax="100"
-                  style="width: 92%"
-                >
-                  <span>92%</span>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-6 animate-box">
-            <div class="progress-wrap ftco-animate">
-              <h3>React.js and Inertia.js</h3>
-              <div class="progress">
-                <div
-                  class="progress-bar color-5"
-                  role="progressbar"
-                  aria-valuenow="85"
-                  aria-valuemin="0"
-                  aria-valuemax="100"
-                  style="width: 85%"
-                >
-                  <span>85%</span>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-6 animate-box">
-            <div class="progress-wrap ftco-animate">
-              <h3>Tailwind CSS and JavaScript</h3>
-              <div class="progress">
-                <div
-                  class="progress-bar color-6"
-                  role="progressbar"
-                  aria-valuenow="88"
-                  aria-valuemin="0"
-                  aria-valuemax="100"
-                  style="width: 88%"
-                >
-                  <span>88%</span>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="ftco-section ftco-project" id="projects-section">
-      <div class="container">
-        <div class="row justify-content-center pb-5">
-          <div class="col-md-12 heading-section text-center ftco-animate">
-            <h1 class="big big-2">Projects</h1>
-            <h2 class="mb-4">Projects</h2>
-            <p>
-              Selected systems I have worked on across finance, healthcare,
-              commerce, education, and multi-tenant business platforms.
-            </p>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-md-4">
-            <div
-              class="project img ftco-animate d-flex justify-content-center align-items-center"
-              style="background-image: url(images/project-4.jpg)"
+            <a
+              href="https://github.com/DivyaDharshini-14"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="reveal btn-ghost inline-flex items-center gap-2 !px-4 !py-2.5"
+              data-anim
+              >View all works <span aria-hidden="true">→</span></a
             >
-              <div class="overlay"></div>
-              <div class="text text-center p-4">
-                <h3>
-                  <a href="#"
-                    >Accounting Software for Garments Manufacturing Units</a
-                  >
-                </h3>
-                <span>Laravel, MySQL, REST APIs</span>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-8">
-            <div
-              class="project img ftco-animate d-flex justify-content-center align-items-center"
-              style="background-image: url(images/project-5.jpg)"
-            >
-              <div class="overlay"></div>
-              <div class="text text-center p-4">
-                <h3><a href="#">Healthcare Management System</a></h3>
-                <span>User app, admin panel, RBAC</span>
-              </div>
-            </div>
           </div>
 
-          <div class="col-md-8">
-            <div
-              class="project img ftco-animate d-flex justify-content-center align-items-center"
-              style="background-image: url(images/project-1.jpg)"
-            >
-              <div class="overlay"></div>
-              <div class="text text-center p-4">
-                <h3><a href="#">Waqin Multi-Tenant Admin Panel</a></h3>
-                <span>Tenant isolation, APIs, business modules</span>
-              </div>
-            </div>
-
-            <div
-              class="project img ftco-animate d-flex justify-content-center align-items-center"
-              style="background-image: url(images/project-6.jpg)"
-            >
-              <div class="overlay"></div>
-              <div class="text text-center p-4">
-                <h3><a href="#">Smart Local Mart (S-Mart)</a></h3>
-                <span>Q-commerce platform, inventory, orders</span>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-4">
-            <div class="row">
-              <div class="col-md-12">
-                <div
-                  class="project img ftco-animate d-flex justify-content-center align-items-center"
-                  style="background-image: url(images/project-2.jpg)"
-                >
-                  <div class="overlay"></div>
-                  <div class="text text-center p-4">
-                    <h3><a href="#">Mindhive E-Learning Platform</a></h3>
-                    <span>Course management and admin modules</span>
+          
+          <div class="work-grid">
+            <article class="work-row work-row--featured surface-card" data-work>
+              <div class="work-ph" aria-hidden="true">
+                <div class="work-ph__ui">
+                  <span class="work-ph__bar work-ph__bar--sm"></span>
+                  <span class="work-ph__bar work-ph__bar--md"></span>
+                  <span class="work-ph__bar work-ph__bar--lg"></span>
+                  <div class="work-ph__blocks">
+                    <span class="work-ph__block"></span>
+                    <span class="work-ph__block"></span>
+                    <span class="work-ph__block"></span>
                   </div>
                 </div>
               </div>
-              <div class="col-md-12">
-                <div
-                  class="project img ftco-animate d-flex justify-content-center align-items-center"
-                  style="background-image: url(images/project-3.jpg)"
+              <div class="work-row__body">
+                <div class="work-row__meta">
+                  <span class="work-index">01</span>
+                  <span class="work-tag">Live</span>
+                </div>
+                <h3>Waqin</h3>
+                <p class="work-row__desc">
+                  Multi-tenant SaaS admin for retail — tenants, forms, leads, packages, and APIs.
+                </p>
+                <div class="work-row__chips">
+                  <span class="chip">Laravel</span>
+                  <span class="chip">PHP</span>
+                  <span class="chip">MySQL</span>
+                  <span class="chip">REST</span>
+                </div>
+                <a
+                  href="https://waqin.ai/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="project-link"
+                  >Visit waqin.ai <span aria-hidden="true">↗</span></a
                 >
-                  <div class="overlay"></div>
-                  <div class="text text-center p-4">
-                    <h3><a href="#">Secure API Ecosystems</a></h3>
-                    <span>Sanctum, JWT, Passport, Swagger</span>
+              </div>
+            </article>
+
+            <article class="work-row surface-card" data-work>
+              <div class="work-ph" aria-hidden="true">
+                <div class="work-ph__ui">
+                  <span class="work-ph__bar work-ph__bar--sm"></span>
+                  <span class="work-ph__bar work-ph__bar--md"></span>
+                  <span class="work-ph__bar work-ph__bar--lg"></span>
+                  <div class="work-ph__blocks">
+                    <span class="work-ph__block"></span>
+                    <span class="work-ph__block"></span>
+                    <span class="work-ph__block"></span>
                   </div>
                 </div>
               </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="ftco-section" id="blog-section">
-      <div class="container">
-        <div class="row justify-content-center mb-5 pb-5">
-          <div class="col-md-7 heading-section text-center ftco-animate">
-            <h1 class="big big-2">Highlights</h1>
-            <h2 class="mb-4">Achievements</h2>
-            <p>
-              Key outcomes across the systems and platforms I have delivered.
-            </p>
-          </div>
-        </div>
-        <div class="row d-flex">
-          <div class="col-md-4 d-flex ftco-animate">
-            <div class="blog-entry justify-content-end">
-              <a
-                href="single.html"
-                class="block-20"
-                style="background-image: url(&quot;images/image_1.jpg&quot;)"
-              >
-              </a>
-              <div class="text mt-3 float-right d-block">
-                <div class="d-flex align-items-center mb-3 meta">
-                  <p class="mb-0">
-                    <span class="mr-2">Production Delivery</span>
-                    <a href="#" class="mr-2">Achievement</a>
-                    <a href="#" class="meta-chat"
-                      ><span class="icon-chat"></span> 1</a
-                    >
-                  </p>
+              <div class="work-row__body">
+                <div class="work-row__meta">
+                  <span class="work-index">02</span>
+                  <span class="work-tag">Internal</span>
                 </div>
-                <h3 class="heading">
-                  <a href="#"
-                    >Delivered multiple production-ready backend systems</a
-                  >
-                </h3>
-                <p>
-                  Worked across accounting, healthcare, e-commerce, e-learning,
-                  and multi-tenant applications with a focus on maintainable
-                  backend architecture.
+                <h3>Accounting</h3>
+                <p class="work-row__desc">
+                  Garment manufacturing finance — journals, ledgers, invoices, and reports.
                 </p>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-4 d-flex ftco-animate">
-            <div class="blog-entry justify-content-end">
-              <a
-                href="single.html"
-                class="block-20"
-                style="background-image: url(&quot;images/image_2.jpg&quot;)"
-              >
-              </a>
-              <div class="text mt-3 float-right d-block">
-                <div class="d-flex align-items-center mb-3 meta">
-                  <p class="mb-0">
-                    <span class="mr-2">Architecture</span>
-                    <a href="#" class="mr-2">Achievement</a>
-                    <a href="#" class="meta-chat"
-                      ><span class="icon-chat"></span> 1</a
-                    >
-                  </p>
+                <div class="work-row__chips">
+                  <span class="chip">Livewire</span>
+                  <span class="chip">Laravel</span>
+                  <span class="chip">MySQL</span>
                 </div>
-                <h3 class="heading">
-                  <a href="#">Designed scalable REST API architectures</a>
-                </h3>
-                <p>
-                  Built secure API systems for web and mobile platforms with
-                  versioning, validation, middleware, and OpenAPI-based
-                  documentation.
-                </p>
               </div>
-            </div>
-          </div>
-          <div class="col-md-4 d-flex ftco-animate">
-            <div class="blog-entry">
-              <a
-                href="single.html"
-                class="block-20"
-                style="background-image: url(&quot;images/image_3.jpg&quot;)"
-              >
-              </a>
-              <div class="text mt-3 float-right d-block">
-                <div class="d-flex align-items-center mb-3 meta">
-                  <p class="mb-0">
-                    <span class="mr-2">Security and Scale</span>
-                    <a href="#" class="mr-2">Achievement</a>
-                    <a href="#" class="meta-chat"
-                      ><span class="icon-chat"></span> 1</a
-                    >
-                  </p>
+            </article>
+
+            <article class="work-row surface-card" data-work>
+              <div class="work-ph" aria-hidden="true">
+                <div class="work-ph__ui">
+                  <span class="work-ph__bar work-ph__bar--sm"></span>
+                  <span class="work-ph__bar work-ph__bar--md"></span>
+                  <span class="work-ph__bar work-ph__bar--lg"></span>
+                  <div class="work-ph__blocks">
+                    <span class="work-ph__block"></span>
+                    <span class="work-ph__block"></span>
+                    <span class="work-ph__block"></span>
+                  </div>
                 </div>
-                <h3 class="heading">
-                  <a href="#"
-                    >Implemented secure authentication and authorization
-                    flows</a
-                  >
-                </h3>
-                <p>
-                  Used Laravel Sanctum, JWT, Passport, and RBAC to support
-                  secure access control across diverse products and user roles.
+              </div>
+              <div class="work-row__body">
+                <div class="work-row__meta">
+                  <span class="work-index">03</span>
+                  <span class="work-tag">Internal</span>
+                </div>
+                <h3>Mindhive Video</h3>
+                <p class="work-row__desc">
+                  Sales training for field teams — pitch recording, AI scoring, quizzes, and polls.
                 </p>
+                <div class="work-row__chips">
+                  <span class="chip">Laravel 10</span>
+                  <span class="chip">FFmpeg</span>
+                  <span class="chip">Blade</span>
+                </div>
               </div>
-            </div>
+            </article>
+
+            <article class="work-row surface-card" data-work>
+              <div class="work-ph" aria-hidden="true">
+                <div class="work-ph__ui">
+                  <span class="work-ph__bar work-ph__bar--sm"></span>
+                  <span class="work-ph__bar work-ph__bar--md"></span>
+                  <span class="work-ph__bar work-ph__bar--lg"></span>
+                  <div class="work-ph__blocks">
+                    <span class="work-ph__block"></span>
+                    <span class="work-ph__block"></span>
+                    <span class="work-ph__block"></span>
+                  </div>
+                </div>
+              </div>
+              <div class="work-row__body">
+                <div class="work-row__meta">
+                  <span class="work-index">04</span>
+                  <span class="work-tag">Personal</span>
+                </div>
+                <h3>Healthcare Management</h3>
+                <p class="work-row__desc">Appointments, RBAC, REST APIs, Tailwind + Alpine.</p>
+              </div>
+            </article>
+
+            <article class="work-row surface-card" data-work>
+              <div class="work-ph" aria-hidden="true">
+                <div class="work-ph__ui">
+                  <span class="work-ph__bar work-ph__bar--sm"></span>
+                  <span class="work-ph__bar work-ph__bar--md"></span>
+                  <span class="work-ph__bar work-ph__bar--lg"></span>
+                  <div class="work-ph__blocks">
+                    <span class="work-ph__block"></span>
+                    <span class="work-ph__block"></span>
+                    <span class="work-ph__block"></span>
+                  </div>
+                </div>
+              </div>
+              <div class="work-row__body">
+                <div class="work-row__meta">
+                  <span class="work-index">05</span>
+                  <span class="work-tag">Personal</span>
+                </div>
+                <h3>Smart Local Mart</h3>
+                <p class="work-row__desc">Q-commerce with Laravel, React, Inertia, and TypeScript.</p>
+              </div>
+            </article>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
 
-    <section
-      class="ftco-section ftco-no-pt ftco-no-pb ftco-counter img"
-      id="section-counter"
-    >
-      <div class="container">
-        <div class="row d-md-flex align-items-center">
-          <div
-            class="col-md d-flex justify-content-center counter-wrap ftco-animate"
-          >
-            <div class="block-18">
-              <div class="text">
-                <strong class="number" data-number="2">0</strong>
-                <span>Years of education milestones</span>
-              </div>
+      <!-- Experience -->
+      <section id="experience" class="relative overflow-hidden border-y border-slate-800 bg-dark">
+        <div
+          class="pointer-events-none absolute inset-0 opacity-40"
+          aria-hidden="true"
+          style="background: radial-gradient(ellipse 50% 40% at 80% 10%, rgba(8,145,178,0.2), transparent 60%);"
+        ></div>
+        <div class="relative mx-auto max-w-site px-5 py-14 sm:px-8 sm:py-16">
+          <div class="mb-8 max-w-2xl">
+            <p class="reveal mark" data-anim>Experience</p>
+            <h2 class="reveal heading mt-2 text-h2" data-anim>Career</h2>
+            <div class="reveal exp-summary" data-anim>
+              <span><strong>2+</strong> roles</span>
+              <span><strong>2024</strong> — Present</span>
+              <span><strong>Bangalore</strong> · Tiruppur</span>
             </div>
           </div>
-          <div
-            class="col-md d-flex justify-content-center counter-wrap ftco-animate"
-          >
-            <div class="block-18">
-              <div class="text">
-                <strong class="number" data-number="5">0</strong>
-                <span>Core projects</span>
-              </div>
-            </div>
-          </div>
-          <div
-            class="col-md d-flex justify-content-center counter-wrap ftco-animate"
-          >
-            <div class="block-18">
-              <div class="text">
-                <strong class="number" data-number="6">0</strong>
-                <span>Primary skill areas</span>
-              </div>
-            </div>
-          </div>
-          <div
-            class="col-md d-flex justify-content-center counter-wrap ftco-animate"
-          >
-            <div class="block-18">
-              <div class="text">
-                <strong class="number" data-number="1">0</strong>
-                <span>Plus years of experience</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
 
-    <section
-      class="ftco-section ftco-hireme img margin-top"
-      style="background-image: url(images/bg_1.jpg)"
-    >
-      <div class="container">
-        <div class="row justify-content-center">
-          <div class="col-md-7 ftco-animate text-center">
-            <h2>I'm <span>available</span> for backend and full stack roles</h2>
-            <p>
-              I enjoy building scalable Laravel applications, secure APIs, and
-              maintainable admin systems for product teams.
-            </p>
-            <p class="mb-0">
-              <a href="#contact-section" class="btn btn-primary py-3 px-5"
-                >Get In Touch</a
-              >
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section
-      class="ftco-section contact-section ftco-no-pb"
-      id="contact-section"
-    >
-      <div class="container">
-        <div class="row justify-content-center mb-5 pb-3">
-          <div class="col-md-7 heading-section text-center ftco-animate">
-            <h1 class="big big-2">Contact</h1>
-            <h2 class="mb-4">Contact Me</h2>
-            <p>
-              If you are hiring for Laravel, PHP, API, or full stack roles, I
-              would be glad to connect.
-            </p>
-          </div>
-        </div>
-
-        <div class="row d-flex contact-info mb-5">
-          <div class="col-md-6 col-lg-3 d-flex ftco-animate">
-            <div class="align-self-stretch box p-4 text-center">
-              <div
-                class="icon d-flex align-items-center justify-content-center"
-              >
-                <span class="icon-map-signs"></span>
+          <div class="timeline">
+            <article class="timeline-card timeline-card--now" data-exp>
+              <span class="timeline-card__dot" aria-hidden="true"></span>
+              <div class="timeline-card__top">
+                <span class="timeline-badge timeline-badge--now">Present</span>
+                <span class="timeline-date">Jun 2025 – Present</span>
               </div>
-              <h3 class="mb-4">Address</h3>
-              <p>Bangalore, Karnataka, India</p>
-            </div>
-          </div>
-          <div class="col-md-6 col-lg-3 d-flex ftco-animate">
-            <div class="align-self-stretch box p-4 text-center">
-              <div
-                class="icon d-flex align-items-center justify-content-center"
-              >
-                <span class="icon-phone2"></span>
-              </div>
-              <h3 class="mb-4">Contact Number</h3>
-              <p><a href="tel:+917530077506">+91-7530077506</a></p>
-            </div>
-          </div>
-          <div class="col-md-6 col-lg-3 d-flex ftco-animate">
-            <div class="align-self-stretch box p-4 text-center">
-              <div
-                class="icon d-flex align-items-center justify-content-center"
-              >
-                <span class="icon-paper-plane"></span>
-              </div>
-              <h3 class="mb-4">Email Address</h3>
-              <p>
-                <a href="mailto:divyadharshinin2922@gmail.com"
-                  >divyadharshinin2922@gmail.com</a
-                >
+              <h3>Full Stack Laravel Developer</h3>
+              <p class="timeline-card__co">Appstronaut IT Solution · Bangalore</p>
+              <p class="timeline-card__desc">
+                Laravel apps, REST APIs, Sanctum/JWT/RBAC, React + Inertia admin UIs,
+                MySQL optimization, and Swagger docs.
               </p>
+              <div class="timeline-card__skills">
+                <span class="timeline-chip">Laravel</span>
+                <span class="timeline-chip">REST APIs</span>
+                <span class="timeline-chip">React</span>
+                <span class="timeline-chip">Inertia</span>
+                <span class="timeline-chip">MySQL</span>
+              </div>
+            </article>
+
+            <article class="timeline-card" data-exp>
+              <span class="timeline-card__dot" aria-hidden="true"></span>
+              <div class="timeline-card__top">
+                <span class="timeline-badge timeline-badge--past">Previous</span>
+                <span class="timeline-date">Dec 2024 – May 2025</span>
+              </div>
+              <h3>Web Developer</h3>
+              <p class="timeline-card__co">Aaran Infotech · Tiruppur</p>
+              <p class="timeline-card__desc">
+                Accounting product with Livewire — modules, CRUD, APIs, and Git collaboration.
+              </p>
+              <div class="timeline-card__skills">
+                <span class="timeline-chip">Livewire</span>
+                <span class="timeline-chip">Laravel</span>
+                <span class="timeline-chip">CRUD</span>
+                <span class="timeline-chip">Git</span>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- Skills — stack cards -->
+      <section id="skills" class="border-b border-slate-800 px-5 py-14 sm:px-8 sm:py-16">
+        <div class="mx-auto max-w-site">
+          <div class="mb-8 max-w-xl">
+            <p class="reveal mark" data-anim>Skills</p>
+            <h2 class="reveal heading mt-2 text-h2" data-anim>Stack</h2>
+            <p class="reveal mt-2 text-sm text-slate-400" data-anim>Tools I use to ship Laravel products.</p>
+          </div>
+          <div class="reveal grid gap-4 sm:grid-cols-2 lg:grid-cols-3" data-anim>
+            <div class="stack-panel">
+              <h3 class="text-xs font-bold uppercase tracking-wider">Backend</h3>
+            <ul class="stack-icons" aria-label="Backend stack">
+              <li>
+                <img
+                  src="https://ik.imagekit.io/codebyjerry/Techstack%20logos/php.png?updatedAt=1777103789754"
+                  alt=""
+                  width="44"
+                  height="44"
+                  loading="lazy"
+                  decoding="async"
+                />
+                <span>PHP</span>
+              </li>
+              <li>
+                <img
+                  src="https://ik.imagekit.io/codebyjerry/Techstack%20logos/node-js.png?updatedAt=1777103789668"
+                  alt=""
+                  width="44"
+                  height="44"
+                  loading="lazy"
+                  decoding="async"
+                />
+                <span>Node.js</span>
+              </li>
+              <li>
+                <img
+                  src="https://ik.imagekit.io/codebyjerry/Techstack%20logos/Laravel.png?updatedAt=1777103789399"
+                  alt=""
+                  width="44"
+                  height="44"
+                  loading="lazy"
+                  decoding="async"
+                />
+                <span>Laravel</span>
+              </li>
+            </ul>
+          </div>
+          <div class="stack-panel">
+            <h3 class="text-xs font-bold uppercase tracking-wider">Frontend</h3>
+            <ul class="stack-icons" aria-label="Frontend stack">
+              <li>
+                <img
+                  src="https://ik.imagekit.io/codebyjerry/Techstack%20logos/javascript.webp?updatedAt=1777103789547"
+                  alt=""
+                  width="44"
+                  height="44"
+                  loading="lazy"
+                  decoding="async"
+                />
+                <span>Javascript</span>
+              </li>
+              <li>
+                <img
+                  src="https://ik.imagekit.io/codebyjerry/Techstack%20logos/tailwind%20css.png?updatedAt=1777103789565"
+                  alt=""
+                  width="44"
+                  height="44"
+                  loading="lazy"
+                  decoding="async"
+                />
+                <span>Tailwind</span>
+              </li>
+              <li>
+                <img
+                  src="https://ik.imagekit.io/codebyjerry/Techstack%20logos/React.png?updatedAt=1777103789784"
+                  alt=""
+                  width="44"
+                  height="44"
+                  loading="lazy"
+                  decoding="async"
+                />
+                <span>React</span>
+              </li>
+              <li>
+                <img
+                  src="https://ik.imagekit.io/codebyjerry/Techstack%20logos/alpine.jpg?updatedAt=1777103789368"
+                  alt=""
+                  width="44"
+                  height="44"
+                  loading="lazy"
+                  decoding="async"
+                />
+                <span>Alpine.js</span>
+              </li>
+            </ul>
+          </div>
+          <div class="stack-panel sm:col-span-2 lg:col-span-1">
+            <h3 class="text-xs font-bold uppercase tracking-wider">DB &amp; tools</h3>
+            <ul class="stack-icons" aria-label="Database and tools">
+              <li>
+                <img
+                  src="https://ik.imagekit.io/codebyjerry/Techstack%20logos/mysql.png?updatedAt=1777103789400"
+                  alt=""
+                  width="44"
+                  height="44"
+                  loading="lazy"
+                  decoding="async"
+                />
+                <span>MySQL</span>
+              </li>
+              <li>
+                <img
+                  src="https://ik.imagekit.io/codebyjerry/Techstack%20logos/Git.png?updatedAt=1777103789358"
+                  alt=""
+                  width="44"
+                  height="44"
+                  loading="lazy"
+                  decoding="async"
+                />
+                <span>Git</span>
+              </li>
+              <li>
+                <img
+                  src="https://ik.imagekit.io/codebyjerry/Techstack%20logos/Postman.png?updatedAt=1777103789313"
+                  alt=""
+                  width="44"
+                  height="44"
+                  loading="lazy"
+                  decoding="async"
+                />
+                <span>Postman</span>
+              </li>
+              <li>
+                <img
+                  src="https://ik.imagekit.io/codebyjerry/Techstack%20logos/Hostinger.png?updatedAt=1777103788743"
+                  alt=""
+                  width="44"
+                  height="44"
+                  loading="lazy"
+                  decoding="async"
+                />
+                <span>Hostinger</span>
+              </li>
+            </ul>
+          </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- About — profile + education cards -->
+      <section id="about" class="section-band border-b px-5 py-14 sm:px-8 sm:py-16">
+        <div class="mx-auto grid max-w-site gap-8 lg:grid-cols-12 lg:gap-10">
+          <div class="lg:col-span-6">
+            <p class="reveal mark" data-anim>About</p>
+            <h2 class="reveal heading mt-2 text-h2 text-white" data-anim>About me</h2>
+            <p class="reveal mt-4 max-w-xl text-lead" data-anim>
+              Full Stack Laravel Developer focused on reliable backends, clear APIs, and
+              practical admin UIs. Open to Laravel and full-stack roles in Bangalore and remote.
+            </p>
+          </div>
+          <div class="reveal grid gap-3 sm:grid-cols-2 lg:col-span-6 lg:grid-cols-1" data-anim>
+            <div class="edu-card">
+              <p class="edu-card__label">Education</p>
+              <h3 class="mt-2 text-base font-semibold text-white sm:text-lg">M.Sc. Computer Science</h3>
+              <p class="mt-1 text-sm text-slate-400">2021 – 2023 · Bharathiar University</p>
+            </div>
+            <div class="edu-card">
+              <p class="edu-card__label">Education</p>
+              <h3 class="mt-2 text-base font-semibold text-white sm:text-lg">B.Sc. Information Technology</h3>
+              <p class="mt-1 text-sm text-slate-400">2018 – 2021 · Bharathiar University</p>
             </div>
           </div>
-          <div class="col-md-6 col-lg-3 d-flex ftco-animate">
-            <div class="align-self-stretch box p-4 text-center">
-              <div
-                class="icon d-flex align-items-center justify-content-center"
-              >
-                <span class="icon-globe"></span>
-              </div>
-              <h3 class="mb-4">Website</h3>
-              <p>
+        </div>
+      </section>
+
+      <!-- Contact — CTA panel -->
+      <section id="contact" class="border-b border-slate-800 px-5 py-14 sm:px-8 sm:py-16">
+        <div class="mx-auto max-w-site">
+          <div class="contact-panel reveal grid md:grid-cols-2" data-anim>
+            <div class="flex flex-col justify-center px-5 py-7 sm:px-8 sm:py-9">
+              <p class="mark">Contact</p>
+              <h2 class="heading mt-3 text-h3 sm:text-h2">
+                Available for Laravel &amp; full-stack roles
+              </h2>
+              <p class="copy-light mt-3 max-w-md text-sm leading-relaxed sm:text-[1.05rem] sm:leading-relaxed">
+                Prefer email for opportunities. Happy to share project details or jump on a quick call.
+              </p>
+              <div class="mt-5 flex flex-wrap items-center gap-3">
+                <a
+                  href="mailto:divyadharshinin2922@gmail.com"
+                  class="social-icon"
+                  aria-label="Email"
+                  title="Email"
+                >
+                  <img src="assets/icons/email.svg" alt="" width="20" height="20" />
+                </a>
+                <a href="tel:+917530077506" class="social-icon" aria-label="Call" title="Call">
+                  <img src="assets/icons/phone.svg" alt="" width="20" height="20" />
+                </a>
+                <a
+                  href="Divyadharshini_N.pdf"
+                  target="_blank"
+                  rel="noopener"
+                  class="social-icon"
+                  aria-label="Download CV"
+                  title="CV"
+                >
+                  <img src="assets/icons/resume-4-svgrepo-com.svg" alt="" width="20" height="20" />
+                </a>
+                <a
+                  href="https://github.com/DivyaDharshini-14"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="social-icon"
+                  aria-label="GitHub"
+                  title="GitHub"
+                >
+                  <img src="assets/icons/github-142-svgrepo-com.svg" alt="" width="20" height="20" />
+                </a>
                 <a
                   href="https://linkedin.com/in/divya-dharshini146"
                   target="_blank"
-                  >linkedin.com/in/divya-dharshini146</a
+                  rel="noopener noreferrer"
+                  class="social-icon"
+                  aria-label="LinkedIn"
+                  title="LinkedIn"
                 >
+                  <img src="assets/icons/linkedin-rounded-svgrepo-com.svg" alt="" width="20" height="20" />
+                </a>
+              </div>
+              <p class="mt-5 text-xs text-slate-400 sm:text-sm">
+                divyadharshinin2922@gmail.com · +91 75300 77506 · Bangalore
               </p>
             </div>
+            <figure class="contact-panel__media">
+              <img
+                src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&amp;fit=crop&amp;w=1200&amp;q=80"
+                alt="Developer workspace with laptop and code"
+                width="1200"
+                height="800"
+                loading="lazy"
+                decoding="async"
+              />
+            </figure>
           </div>
         </div>
+      </section>
+    </main>
 
-        <div class="row no-gutters block-9">
-          <div class="col-md-6 order-md-last d-flex">
-            <form action="#" class="bg-light p-4 p-md-5 contact-form">
-              <div class="form-group">
-                <input
-                  type="text"
-                  class="form-control"
-                  placeholder="Your Name"
-                />
-              </div>
-              <div class="form-group">
-                <input
-                  type="text"
-                  class="form-control"
-                  placeholder="Your Email"
-                />
-              </div>
-              <div class="form-group">
-                <input type="text" class="form-control" placeholder="Subject" />
-              </div>
-              <div class="form-group">
-                <textarea
-                  name=""
-                  id=""
-                  cols="30"
-                  rows="7"
-                  class="form-control"
-                  placeholder="Message"
-                ></textarea>
-              </div>
-              <div class="form-group">
-                <input
-                  type="submit"
-                  value="Send Message"
-                  class="btn btn-primary py-3 px-5"
-                />
-              </div>
-            </form>
-          </div>
-
-          <div class="col-md-6 d-flex">
-            <div
-              class="img"
-              style="background-image: url(images/about.png)"
-            ></div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <footer class="ftco-footer ftco-section">
-      <div class="container">
-        <div class="row mb-5">
-          <div class="col-md">
-            <div class="ftco-footer-widget mb-4">
-              <h2 class="ftco-heading-2">About</h2>
-              <p>
-                Full Stack Laravel Developer focused on secure APIs, scalable
-                backend systems, and practical product delivery.
-              </p>
-              <ul
-                class="ftco-footer-social list-unstyled float-md-left float-lft mt-5"
-              >
-                <li class="ftco-animate">
-                  <a
-                    href="https://linkedin.com/in/divya-dharshini146"
-                    target="_blank"
-                    ><span class="icon-linkedin"></span
-                  ></a>
-                </li>
-                <li class="ftco-animate">
-                  <a href="mailto:divyadharshinin2922@gmail.com"
-                    ><span class="icon-envelope"></span
-                  ></a>
-                </li>
-                <li class="ftco-animate">
-                  <a href="tel:+917530077506"
-                    ><span class="icon-phone"></span
-                  ></a>
-                </li>
-              </ul>
-            </div>
-          </div>
-          <div class="col-md">
-            <div class="ftco-footer-widget mb-4 ml-md-4">
-              <h2 class="ftco-heading-2">Links</h2>
-              <ul class="list-unstyled">
-                <li>
-                  <a href="#home-section"
-                    ><span class="icon-long-arrow-right mr-2"></span>Home</a
-                  >
-                </li>
-                <li>
-                  <a href="#about-section"
-                    ><span class="icon-long-arrow-right mr-2"></span>About</a
-                  >
-                </li>
-                <li>
-                  <a href="#services-section"
-                    ><span class="icon-long-arrow-right mr-2"></span>Services</a
-                  >
-                </li>
-                <li>
-                  <a href="#projects-section"
-                    ><span class="icon-long-arrow-right mr-2"></span>Projects</a
-                  >
-                </li>
-                <li>
-                  <a href="#contact-section"
-                    ><span class="icon-long-arrow-right mr-2"></span>Contact</a
-                  >
-                </li>
-              </ul>
-            </div>
-          </div>
-          <div class="col-md">
-            <div class="ftco-footer-widget mb-4">
-              <h2 class="ftco-heading-2">Specialties</h2>
-              <ul class="list-unstyled">
-                <li>
-                  <a href="#"
-                    ><span class="icon-long-arrow-right mr-2"></span>Laravel
-                    Development</a
-                  >
-                </li>
-                <li>
-                  <a href="#"
-                    ><span class="icon-long-arrow-right mr-2"></span>REST API
-                    Development</a
-                  >
-                </li>
-                <li>
-                  <a href="#"
-                    ><span class="icon-long-arrow-right mr-2"></span>Admin
-                    Dashboards</a
-                  >
-                </li>
-                <li>
-                  <a href="#"
-                    ><span class="icon-long-arrow-right mr-2"></span>RBAC and
-                    Security</a
-                  >
-                </li>
-                <li>
-                  <a href="#"
-                    ><span class="icon-long-arrow-right mr-2"></span>Database
-                    Optimization</a
-                  >
-                </li>
-              </ul>
-            </div>
-          </div>
-          <div class="col-md">
-            <div class="ftco-footer-widget mb-4">
-              <h2 class="ftco-heading-2">Contact</h2>
-              <div class="block-23 mb-3">
-                <ul>
-                  <li>
-                    <span class="icon icon-map-marker"></span
-                    ><span class="text">Bangalore, Karnataka, India</span>
-                  </li>
-                  <li>
-                    <a href="tel:+917530077506"
-                      ><span class="icon icon-phone"></span
-                      ><span class="text">+91-7530077506</span></a
-                    >
-                  </li>
-                  <li>
-                    <a href="mailto:divyadharshinin2922@gmail.com"
-                      ><span class="icon icon-envelope"></span
-                      ><span class="text"
-                        >divyadharshinin2922@gmail.com</span
-                      ></a
-                    >
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-md-12 text-center">
-            <p>
-              <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-              Copyright &copy;
-              <script>
-                document.write(new Date().getFullYear());
-              </script>
-              All rights reserved | This template is made with
-              <i class="icon-heart color-danger" aria-hidden="true"></i> by
-              <a href="https://colorlib.com" target="_blank">Colorlib</a>
-              <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-            </p>
-          </div>
-        </div>
+    <footer class="border-t border-slate-800 bg-dark-2">
+      <div class="mx-auto flex max-w-site flex-wrap items-center justify-between gap-3 px-5 py-6 text-sm text-slate-400 sm:px-8">
+        <span>© <span id="year"></span> Divyadharshini N</span>
+        <a href="https://dharshini.pages.dev" target="_blank" rel="noopener noreferrer" class="hover:text-cyan-300"
+          >dharshini.pages.dev</a
+        >
       </div>
     </footer>
 
-    <!-- loader -->
-    <div id="ftco-loader" class="show fullscreen">
-      <svg class="circular" width="48px" height="48px">
-        <circle
-          class="path-bg"
-          cx="24"
-          cy="24"
-          r="22"
-          fill="none"
-          stroke-width="4"
-          stroke="#eeeeee"
-        />
-        <circle
-          class="path"
-          cx="24"
-          cy="24"
-          r="22"
-          fill="none"
-          stroke-width="4"
-          stroke-miterlimit="10"
-          stroke="#F96D00"
-        />
-      </svg>
-    </div>
+    <script>
+      document.getElementById("year").textContent = new Date().getFullYear();
 
-    <script src="js/jquery.min.js"></script>
-    <script src="js/jquery-migrate-3.0.1.min.js"></script>
-    <script src="js/popper.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <script src="js/jquery.easing.1.3.js"></script>
-    <script src="js/jquery.waypoints.min.js"></script>
-    <script src="js/jquery.stellar.min.js"></script>
-    <script src="js/owl.carousel.min.js"></script>
-    <script src="js/jquery.magnific-popup.min.js"></script>
-    <script src="js/aos.js"></script>
-    <script src="js/jquery.animateNumber.min.js"></script>
-    <script src="js/scrollax.min.js"></script>
+      const header = document.getElementById("site-header");
+      const onScrollHeader = () => {
+        header.classList.toggle("is-scrolled", window.scrollY > 12);
+      };
+      onScrollHeader();
+      window.addEventListener("scroll", onScrollHeader, { passive: true });
 
-    <script src="js/main.js"></script>
+      const sections = ["work", "experience", "skills", "contact"]
+        .map((id) => document.getElementById(id))
+        .filter(Boolean);
+      const navLinks = document.querySelectorAll("[data-nav]");
+      const setActiveNav = () => {
+        const y = window.scrollY + 120;
+        let current = "";
+        sections.forEach((sec) => {
+          if (sec.offsetTop <= y) current = sec.id;
+        });
+        navLinks.forEach((link) => {
+          link.classList.toggle("is-active", link.getAttribute("href") === `#${current}`);
+        });
+      };
+      setActiveNav();
+      window.addEventListener("scroll", setActiveNav, { passive: true });
+
+      gsap.registerPlugin(ScrollTrigger);
+      if (!window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+        const hero = document.querySelectorAll("#top [data-anim]");
+        gsap.from(hero, {
+          y: 22,
+          opacity: 0,
+          duration: 0.55,
+          stagger: 0.06,
+          ease: "power3.out",
+        });
+        const rest = gsap.utils.toArray("[data-anim]").filter((el) => !el.closest("#top"));
+        gsap.set(rest, { y: 28, opacity: 0 });
+        ScrollTrigger.batch(rest, {
+          start: "top 90%",
+          once: true,
+          onEnter: (batch) =>
+            gsap.to(batch, {
+              y: 0,
+              opacity: 1,
+              duration: 0.45,
+              stagger: 0.05,
+              ease: "power2.out",
+              overwrite: true,
+            }),
+        });
+
+        gsap.utils.toArray("[data-work]").forEach((row, i) => {
+          gsap.from(row, {
+            y: 28,
+            opacity: 0,
+            duration: 0.55,
+            delay: (i % 2) * 0.06,
+            ease: "power3.out",
+            scrollTrigger: { trigger: row, start: "top 88%", once: true },
+          });
+        });
+
+        gsap.utils.toArray("[data-exp]").forEach((card, i) => {
+          gsap.from(card, {
+            y: 28,
+            opacity: 0,
+            duration: 0.55,
+            delay: i * 0.1,
+            ease: "power3.out",
+            scrollTrigger: { trigger: card, start: "top 88%", once: true },
+          });
+        });
+      }
+    </script>
   </body>
 </html>
