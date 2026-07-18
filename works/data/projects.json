@@ -1,0 +1,220 @@
+[
+  {
+    "slug": "waqin",
+    "title": "Waqin",
+    "tag": "Live",
+    "description": "Multi-tenant SaaS admin for retail — tenants, forms, leads, packages, and APIs.",
+    "summary": "Built and maintained core admin workflows for a multi-tenant retail SaaS: tenant onboarding, dynamic forms, lead pipelines, package management, and REST APIs that power web and mobile clients.",
+    "stacks": ["Laravel", "PHP", "MySQL", "REST"],
+    "contribution": [
+      "Developed multi-tenant admin modules for forms, leads, and packages",
+      "Built and documented REST APIs for web and mobile consumers",
+      "Implemented tenant-aware data flows and secure backend operations",
+      "Collaborated on feature delivery, debugging, and production fixes"
+    ],
+    "github": "",
+    "live": "https://waqin.ai/",
+    "screenshots": [
+      { "src": "https://ik.imagekit.io/storage146/waqin/waqin/w-1.png?updatedAt=1784136383268", "alt": "Waqin login screen" },
+      { "src": "https://ik.imagekit.io/storage146/waqin/waqin/w-2.png?updatedAt=1784136384053", "alt": "Waqin dashboard with sales and revenue cards" },
+      { "src": "https://ik.imagekit.io/storage146/waqin/waqin/w-3.png?updatedAt=1784136383960", "alt": "Waqin tenants management" },
+      { "src": "https://ik.imagekit.io/storage146/waqin/waqin/w-4.png?updatedAt=1784136383919", "alt": "Waqin businesses categories" },
+      { "src": "https://ik.imagekit.io/storage146/waqin/waqin/w-5.png?updatedAt=1784136383881", "alt": "Waqin channel partners" },
+      { "src": "https://ik.imagekit.io/storage146/waqin/waqin/w-6.png?updatedAt=1784136383955", "alt": "Waqin business sub categories" },
+      { "src": "https://ik.imagekit.io/storage146/waqin/waqin/w-7.png?updatedAt=1784136384007", "alt": "Waqin marketings module" },
+      { "src": "https://ik.imagekit.io/storage146/waqin/waqin/w-8.png?updatedAt=1784136384035", "alt": "Waqin sales and services" },
+      { "src": "https://ik.imagekit.io/storage146/waqin/waqin/w-9.png?updatedAt=1784136383393", "alt": "Waqin form builder" },
+      { "src": "https://ik.imagekit.io/storage146/waqin/waqin/w-10.png?updatedAt=1784136384030", "alt": "Waqin query builder" },
+      { "src": "https://ik.imagekit.io/storage146/waqin/waqin/w-11.png?updatedAt=1784136383710", "alt": "Waqin FCM notification" },
+      { "src": "https://ik.imagekit.io/storage146/waqin/waqin/w-12.png?updatedAt=1784136383428", "alt": "Waqin users and permissions" },
+      { "src": "https://ik.imagekit.io/storage146/waqin/waqin/w-13.png?updatedAt=1784136383513", "alt": "Waqin feature access" },
+      { "src": "https://ik.imagekit.io/storage146/waqin/waqin/w-14.png?updatedAt=1784136383652", "alt": "Waqin leads master" },
+      { "src": "https://ik.imagekit.io/storage146/waqin/waqin/w-15.png?updatedAt=1784136383710", "alt": "Waqin manage packages" }
+    ]
+  },
+  {
+    "slug": "codexsun",
+    "title": "Codexsun",
+    "tag": "Live",
+    "description": "Garment manufacturing finance — journals, ledgers, invoices, and reports.",
+    "summary": "Codexsun is a Livewire-powered finance product for garment manufacturing: journal entries, ledgers, invoicing, sales, purchases, expenses, and financial reporting.",
+    "stacks": ["Livewire", "Laravel", "MySQL", "Tailwind CSS", "Alpine.js"],
+    "contribution": [
+      "Built and enhanced accounting modules with Laravel Livewire",
+      "Implemented journal, ledger, invoice, and reporting workflows",
+      "Worked with MySQL schema design and Eloquent models",
+      "Maintained features, fixed issues, and collaborated via Git"
+    ],
+    "github": "",
+    "live": "https://codexsun.com/",
+    "screenshots": [
+      { "src": "https://ik.imagekit.io/storage146/Codexsun/codexsun/cdx%20(1).png?updatedAt=1784136417427", "alt": "Codexsun features overview" },
+      { "src": "https://ik.imagekit.io/storage146/Codexsun/codexsun/cdx%20(2).png?updatedAt=1784136418512", "alt": "Codexsun dashboard" },
+      { "src": "https://ik.imagekit.io/storage146/Codexsun/codexsun/cdx%20(3).png?updatedAt=1784136418376", "alt": "Codexsun sales list" },
+      { "src": "https://ik.imagekit.io/storage146/Codexsun/codexsun/cdx%20(4).png?updatedAt=1784136418431", "alt": "Codexsun choose company" },
+      { "src": "https://ik.imagekit.io/storage146/Codexsun/codexsun/cdx%20(5).png?updatedAt=1784136418533", "alt": "Codexsun sales entry form" },
+      { "src": "https://ik.imagekit.io/storage146/Codexsun/codexsun/cdx%20(6).png?updatedAt=1784136418331", "alt": "Codexsun GST report" },
+      { "src": "https://ik.imagekit.io/storage146/Codexsun/codexsun/cdx%20(7).png?updatedAt=1784136418597", "alt": "Codexsun invoice preview" },
+      { "src": "https://ik.imagekit.io/storage146/Codexsun/codexsun/cdx%20(8).png?updatedAt=1784136418574", "alt": "Codexsun bank books" },
+      { "src": "https://ik.imagekit.io/storage146/Codexsun/codexsun/cdx%20(9).png?updatedAt=1784136418613", "alt": "Codexsun export sales" },
+      { "src": "https://ik.imagekit.io/storage146/Codexsun/codexsun/cdx%20(10).png?updatedAt=1784136417572", "alt": "Codexsun sales items" },
+      { "src": "https://ik.imagekit.io/storage146/Codexsun/codexsun/cdx%20(11).png?updatedAt=1784136417804", "alt": "Codexsun tax invoice viewer" },
+      { "src": "https://ik.imagekit.io/storage146/Codexsun/codexsun/cdx%20(16).png?updatedAt=1784136418205", "alt": "Codexsun entries sidebar view" }
+    ]
+  },
+  {
+    "slug": "mindhive",
+    "title": "Mindhive Video",
+    "tag": "Internal",
+    "description": "Sales training for field teams — pitch recording, AI scoring, quizzes, and polls.",
+    "summary": "A Laravel sales-training platform where field teams record pitches, submit for review, and track performance with AI scoring, quizzes, polls, and learning materials.",
+    "stacks": ["Laravel 10", "PHP", "MySQL", "Blade", "FFmpeg"],
+    "contribution": [
+      "Built pitch recording, upload, and manager review flows",
+      "Integrated FFmpeg processing and AI scoring against brand scripts",
+      "Delivered quizzes, polls, and role-based training dashboards",
+      "Designed unified UI for recordings, assessments, and feedback"
+    ],
+    "github": "",
+    "live": "",
+    "screenshots": [
+      { "src": "https://ik.imagekit.io/storage146/mindhive/mindhive-admin/mh%20(1).png?updatedAt=1784136252591", "alt": "Mindhive admin screen 1" },
+      { "src": "https://ik.imagekit.io/storage146/mindhive/mindhive-admin/mh%20(2).png?updatedAt=1784136252142", "alt": "Mindhive admin screen 2" },
+      { "src": "https://ik.imagekit.io/storage146/mindhive/mindhive-admin/mh%20(3).png?updatedAt=1784136251892", "alt": "Mindhive admin screen 3" },
+      { "src": "https://ik.imagekit.io/storage146/mindhive/mindhive-admin/mh%20(4).png?updatedAt=1784136251937", "alt": "Mindhive admin screen 4" },
+      { "src": "https://ik.imagekit.io/storage146/mindhive/mindhive-admin/mh%20(5).png?updatedAt=1784136251966", "alt": "Mindhive admin screen 5" },
+      { "src": "https://ik.imagekit.io/storage146/mindhive/mindhive-admin/mh%20(6).png?updatedAt=1784136252428", "alt": "Mindhive admin screen 6" },
+      { "src": "https://ik.imagekit.io/storage146/mindhive/mindhive-admin/mh%20(7).png?updatedAt=1784136252433", "alt": "Mindhive admin screen 7" },
+      { "src": "https://ik.imagekit.io/storage146/mindhive/mindhive-admin/mh%20(8).png?updatedAt=1784136252243", "alt": "Mindhive admin screen 8" },
+      { "src": "https://ik.imagekit.io/storage146/mindhive/mindhive-admin/mh%20(9).png?updatedAt=1784136252216", "alt": "Mindhive admin screen 9" },
+      { "src": "https://ik.imagekit.io/storage146/mindhive/mindhive-admin/mh%20(10).png?updatedAt=1784136251883", "alt": "Mindhive admin screen 10" }
+    ]
+  },
+  {
+    "slug": "smart-ledger",
+    "title": "Smart Ledger",
+    "tag": "Internal",
+    "description": "Digital bookkeeping for small businesses — parties, cash/credit entries, and day books.",
+    "summary": "A Livewire bookkeeping app for small businesses: party ledgers, cash and credit entries, and day-book style transaction tracking with a responsive Tailwind + Alpine UI.",
+    "stacks": ["Livewire", "Tailwind CSS", "Alpine.js", "MySQL"],
+    "contribution": [
+      "Implemented party and ledger transaction workflows",
+      "Built cash/credit entry flows and day-book views",
+      "Designed responsive UI with Tailwind CSS and Alpine.js",
+      "Modeled MySQL structures for parties and entries"
+    ],
+    "github": "",
+    "live": "",
+    "screenshots": [
+      { "src": "https://ik.imagekit.io/storage146/smartledger/smart%20ledger/sl%20(1).png?updatedAt=1784136302717", "alt": "Smart Ledger screen 1" },
+      { "src": "https://ik.imagekit.io/storage146/smartledger/smart%20ledger/sl%20(2).png?updatedAt=1784136303168", "alt": "Smart Ledger screen 2" },
+      { "src": "https://ik.imagekit.io/storage146/smartledger/smart%20ledger/sl%20(3).png?updatedAt=1784136303117", "alt": "Smart Ledger screen 3" },
+      { "src": "https://ik.imagekit.io/storage146/smartledger/smart%20ledger/sl%20(4).png?updatedAt=1784136303278", "alt": "Smart Ledger screen 4" },
+      { "src": "https://ik.imagekit.io/storage146/smartledger/smart%20ledger/sl%20(5).png?updatedAt=1784136303358", "alt": "Smart Ledger screen 5" },
+      { "src": "https://ik.imagekit.io/storage146/smartledger/smart%20ledger/sl%20(6).png?updatedAt=1784136303551", "alt": "Smart Ledger screen 6" },
+      { "src": "https://ik.imagekit.io/storage146/smartledger/smart%20ledger/sl%20(7).png?updatedAt=1784136303375", "alt": "Smart Ledger screen 7" },
+      { "src": "https://ik.imagekit.io/storage146/smartledger/smart%20ledger/sl%20(8).png?updatedAt=1784136303368", "alt": "Smart Ledger screen 8" },
+      { "src": "https://ik.imagekit.io/storage146/smartledger/smart%20ledger/sl%20(9).png?updatedAt=1784136303392", "alt": "Smart Ledger screen 9" },
+      { "src": "https://ik.imagekit.io/storage146/smartledger/smart%20ledger/sl%20(10).png?updatedAt=1784136302945", "alt": "Smart Ledger screen 10" },
+      { "src": "https://ik.imagekit.io/storage146/smartledger/smart%20ledger/sl%20(11).png?updatedAt=1784136302764", "alt": "Smart Ledger screen 11" },
+      { "src": "https://ik.imagekit.io/storage146/smartledger/smart%20ledger/sl%20(12).png?updatedAt=1784136302902", "alt": "Smart Ledger screen 12" }
+    ]
+  },
+  {
+    "slug": "sleevecase",
+    "title": "SleeveCase",
+    "tag": "Live",
+    "description": "Mobile case marketing site with catalog, order placement, and cash-on-delivery checkout.",
+    "summary": "A PHP marketing site for mobile cases featuring product catalog, order placement, and cash-on-delivery checkout, styled with Tailwind CSS and backed by MySQL.",
+    "stacks": ["PHP", "Tailwind CSS", "MySQL"],
+    "contribution": [
+      "Built marketing pages and product catalog flows",
+      "Implemented order placement with COD checkout",
+      "Designed responsive layouts with Tailwind CSS",
+      "Managed MySQL storage for products and orders"
+    ],
+    "github": "",
+    "live": "https://sleevecase.page.gd/",
+    "screenshots": [
+      { "src": "https://ik.imagekit.io/storage146/sleevecase/sleeve%20case/slc%20(1).png?updatedAt=1784136327857", "alt": "SleeveCase screen 1" },
+      { "src": "https://ik.imagekit.io/storage146/sleevecase/sleeve%20case/slc%20(2).png?updatedAt=1784136327902", "alt": "SleeveCase screen 2" },
+      { "src": "https://ik.imagekit.io/storage146/sleevecase/sleeve%20case/slc%20(3).png?updatedAt=1784136327906", "alt": "SleeveCase screen 3" },
+      { "src": "https://ik.imagekit.io/storage146/sleevecase/sleeve%20case/slc%20(4).png?updatedAt=1784136327967", "alt": "SleeveCase screen 4" },
+      { "src": "https://ik.imagekit.io/storage146/sleevecase/sleeve%20case/slc%20(5).png?updatedAt=1784136328111", "alt": "SleeveCase screen 5" },
+      { "src": "https://ik.imagekit.io/storage146/sleevecase/sleeve%20case/slc%20(6).png?updatedAt=1784136328135", "alt": "SleeveCase screen 6" },
+      { "src": "https://ik.imagekit.io/storage146/sleevecase/sleeve%20case/slc%20(7).png?updatedAt=1784136328242", "alt": "SleeveCase screen 7" },
+      { "src": "https://ik.imagekit.io/storage146/sleevecase/sleeve%20case/slc%20(8).png?updatedAt=1784136328435", "alt": "SleeveCase screen 8" },
+      { "src": "https://ik.imagekit.io/storage146/sleevecase/sleeve%20case/slc%20(9).png?updatedAt=1784136328404", "alt": "SleeveCase screen 9" },
+      { "src": "https://ik.imagekit.io/storage146/sleevecase/sleeve%20case/slc%20(10).png?updatedAt=1784136327613", "alt": "SleeveCase screen 10" },
+      { "src": "https://ik.imagekit.io/storage146/sleevecase/sleeve%20case/slc%20(11).png?updatedAt=1784136327609", "alt": "SleeveCase screen 11" }
+    ]
+  },
+  {
+    "slug": "metals-minerals",
+    "title": "Metals & Minerals",
+    "tag": "Internal",
+    "description": "Trade platform for products, buy/sell requests, inventory, and user management.",
+    "summary": "A Laravel platform for metals and minerals trade: product catalogs, buy and sell requests, inventory management, and user administration with CSS and JavaScript front-end polish.",
+    "stacks": ["Laravel", "CSS", "JavaScript"],
+    "contribution": [
+      "Built product, inventory, and user management modules",
+      "Implemented buy-request and sell-request workflows",
+      "Handled inventory updates tied to trade requests",
+      "Styled interactive UI with CSS and JavaScript"
+    ],
+    "github": "",
+    "live": "",
+    "screenshots": [
+      { "src": "https://ik.imagekit.io/storage146/metal&materials/metals&minerals/m&m%20(1).png?updatedAt=1784136351918", "alt": "Metals & Minerals screen 1" },
+      { "src": "https://ik.imagekit.io/storage146/metal&materials/metals&minerals/m&m%20(2).png?updatedAt=1784136352358", "alt": "Metals & Minerals screen 2" },
+      { "src": "https://ik.imagekit.io/storage146/metal&materials/metals&minerals/m&m%20(3).png?updatedAt=1784136352913", "alt": "Metals & Minerals screen 3" },
+      { "src": "https://ik.imagekit.io/storage146/metal&materials/metals&minerals/m&m%20(4).png?updatedAt=1784136353047", "alt": "Metals & Minerals screen 4" },
+      { "src": "https://ik.imagekit.io/storage146/metal&materials/metals&minerals/m&m%20(5).png?updatedAt=1784136353197", "alt": "Metals & Minerals screen 5" },
+      { "src": "https://ik.imagekit.io/storage146/metal&materials/metals&minerals/m&m%20(6).png?updatedAt=1784136353324", "alt": "Metals & Minerals screen 6" },
+      { "src": "https://ik.imagekit.io/storage146/metal&materials/metals&minerals/m&m%20(7).png?updatedAt=1784136353156", "alt": "Metals & Minerals screen 7" },
+      { "src": "https://ik.imagekit.io/storage146/metal&materials/metals&minerals/m&m%20(8).png?updatedAt=1784136353137", "alt": "Metals & Minerals screen 8" },
+      { "src": "https://ik.imagekit.io/storage146/metal&materials/metals&minerals/m&m%20(9).png?updatedAt=1784136353014", "alt": "Metals & Minerals screen 9" },
+      { "src": "https://ik.imagekit.io/storage146/metal&materials/metals&minerals/m&m%20(10).png?updatedAt=1784136352020", "alt": "Metals & Minerals screen 10" },
+      { "src": "https://ik.imagekit.io/storage146/metal&materials/metals&minerals/m&m%20(11).png?updatedAt=1784136352125", "alt": "Metals & Minerals screen 11" },
+      { "src": "https://ik.imagekit.io/storage146/metal&materials/metals&minerals/m&m%20(12).png?updatedAt=1784136352401", "alt": "Metals & Minerals screen 12" }
+    ]
+  },
+  {
+    "slug": "healthcare",
+    "title": "Healthcare Management",
+    "tag": "Personal",
+    "description": "Appointments, RBAC, REST APIs, Tailwind + Alpine.",
+    "summary": "A healthcare management app with separate user and admin panels for appointments, patient management, RBAC, and REST APIs for web and mobile clients.",
+    "stacks": ["Laravel", "MySQL", "REST", "Tailwind CSS", "Alpine.js"],
+    "contribution": [
+      "Built user and admin panels for appointments and patients",
+      "Implemented Role-Based Access Control for doctors, staff, and patients",
+      "Developed REST APIs for web and mobile communication",
+      "Designed MySQL schema and responsive Tailwind + Alpine UI"
+    ],
+    "github": "",
+    "live": "",
+    "screenshots": [
+      { "src": "../../assets/healthcare-homepreview.png", "alt": "Healthcare Management preview" }
+    ]
+  },
+  {
+    "slug": "smart",
+    "title": "Smart Local Mart",
+    "tag": "Personal",
+    "description": "Q-commerce with Laravel, React, Inertia, and TypeScript.",
+    "summary": "A q-commerce platform with customer shopping flows and an admin dashboard for inventory, cart, and order tracking — built with Laravel, React, Inertia, and TypeScript.",
+    "stacks": ["Laravel", "React", "Inertia", "TypeScript", "MySQL"],
+    "contribution": [
+      "Built customer storefront and admin dashboard",
+      "Implemented inventory, cart, and order tracking",
+      "Designed MySQL relationships for products, customers, and orders",
+      "Delivered responsive UI with React, Inertia, and TypeScript"
+    ],
+    "github": "",
+    "live": "",
+    "screenshots": [
+      { "src": "../../assets/smart-local-home-preview.png", "alt": "Smart Local Mart preview" }
+    ]
+  }
+]

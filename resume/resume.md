@@ -46,8 +46,8 @@ Waqin Multi-Tenant Business Management Platform - PHP • Laravel • MySQL • 
 •	Implemented features including order management, invoicing, employee management, tenant-specific operations.
 •	Assisted in maintaining tenant-specific database connections and backend functionality to support secure data separation.
 •	Participated in debugging, feature enhancements, code reviews, and team discussions to improve application quality.
-Accounting Software - Livewire • PHP • MySQL • REST APIs • Tailwind CSS • Alpine.js • JavaScript
-•	Contributed to the development of an accounting application supporting journal entries, ledgers, invoices, sales, purchases, expenses, and financial reports.
+Codexsun - Livewire • PHP • MySQL • REST APIs • Tailwind CSS • Alpine.js • JavaScript
+•	Contributed to the development of Codexsun, supporting journal entries, ledgers, invoices, sales, purchases, expenses, and financial reports.
 •	Developed backend modules and enhanced existing features using Laravel and Livewire.
 •	Worked with MySQL database design, Eloquent ORM, and RESTful APIs to support business operations. 
 •	Maintained existing functionality, resolved issues, and collaborated with the team on feature implementation using Git.
